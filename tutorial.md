@@ -1,10 +1,5 @@
 
 # My Tutorial
-```package
-core
-microphone
-moveSMART=github:UT-MPC/pxt-moveSMART
-```
 
 ## Step 1
 

@@ -10,7 +10,6 @@
     "files": [
         "main.ts",
         "README.md"
-        "tutorial.md"
     ],
     "targetVersions": {
         "branch": "v3.1.55",

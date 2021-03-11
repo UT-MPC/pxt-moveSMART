@@ -9,6 +9,7 @@
     },
     "files": [
         "main.ts",
+        "moveSMART.ts",
         "README.md"
     ],
     "targetVersions": {

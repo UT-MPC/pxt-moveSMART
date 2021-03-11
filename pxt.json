@@ -10,6 +10,7 @@
     "files": [
         "main.ts",
         "moveSMART.ts",
+        "tutorial.md",
         "README.md"
     ],
     "targetVersions": {

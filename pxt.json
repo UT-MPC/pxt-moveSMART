@@ -5,8 +5,7 @@
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "microphone": "*",
-        "bluetooth": "*"
+        "microphone": "*"
     },
     "files": [
         "main.ts",

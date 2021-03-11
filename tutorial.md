@@ -10,3 +10,5 @@ Display current step count.
 Place the ``||moveSMART:show step count||`` block in the ``||basic:forever||`` block
 Any command in the ``||basic:forever||`` block will keep on executing.
 
+## Step 6
+Look at the virtual @boardname@ and try pushing the buttons

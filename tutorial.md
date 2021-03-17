@@ -44,7 +44,7 @@ Next, we need to figure out how to start counting steps. Look at the picture on 
 
 ## Step 10
 
-Click on the pink target. Look for the ``||input:on button A pressed||`` block. Drag it to your workspace. Now look inside the moveSMART menu for the ``||moveSMART:start counting||` block. Drag it inside the mouth of the `on button A pressed` block.
+Click on the pink target. Look for the ``||input:on button A pressed||`` block. Drag it to your workspace. Now look inside the moveSMART menu for the ``||moveSMART:start counting||`` block. Drag it inside the mouth of the `on button A pressed` block.
 
 
 ```blocks
@@ -68,4 +68,4 @@ input.onButtonPressed(Button.B, function () {
 Did you get it? You should have dragged the ``||input:on button A pressed||`` block to your workspace and clicked the triangle next to A. Then choose B. Then drag the ``||moveSMART:stop counting||`` block inside the mouth of the ``||input:on button A pressed||`` block.
 
 ## Step 13
-Look at the virtual @boardname@ and try pushing the buttons
+Look at the virtual @boardname@ again. To start counting, press the A button (the black circle next to the A in the traingle). To make a step, you need to shake the @boardname@. Since our @boardname@ isn't real, we just push the little white circle where it says "shake" to pretend to shake it. To stop counting, press the B button. 

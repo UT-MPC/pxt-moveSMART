@@ -11,6 +11,7 @@
         "main.ts",
         "moveSMART.ts",
         "tutorial.md",
+        "tutorial2.md",
         "README.md"
     ],
     "targetVersions": {

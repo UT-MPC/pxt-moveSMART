@@ -32,6 +32,13 @@ namespace moveSMART {
         basic.pause(100)
     }
 
+    /**
+     * TODO: show whether the step counter is counting
+     */
+    export function isCounting(): boolean {
+        return counting
+    }
+
     //helper functions
     input.onGesture(Gesture.Shake, function () {
         if (counting) {

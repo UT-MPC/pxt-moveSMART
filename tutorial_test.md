@@ -9,19 +9,7 @@ In this tutorial, we will learn how to use MakeCode and the @boardname@ to make 
 
 On your screen, you see two blue *blocks*. They say ``||Basic:on start||`` and ``||Basic:forever||``. 
 
-```blocks
-basic.forever(function () {
-    moveSMART.showStepCount()
-})
-```
 
 ## Step 3
 
 please show up....
-```blocks
-input.onGesture(Gesture.Shake, function () {
-    if (moveSMART.isCounting()) {
-        step += 1
-    }
-})
-```

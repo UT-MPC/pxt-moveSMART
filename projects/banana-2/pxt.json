@@ -5,12 +5,12 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "moveSMARTbeta": "github:ut-mpc/pxt-movesmart#v0.0.2"
+        "moveSMARTbeta": "github:ut-mpc/pxt-movesmart#v0.0.25"
     },
     "files": [
         "main.blocks",
         "main.ts",
         "README.md"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }

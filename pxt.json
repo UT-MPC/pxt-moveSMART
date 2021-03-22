@@ -12,6 +12,7 @@
         "moveSMART.ts",
         "tutorial.md",
         "tutorial2.md",
+        "tutorial_test.md",
         "README.md"
     ],
     "targetVersions": {

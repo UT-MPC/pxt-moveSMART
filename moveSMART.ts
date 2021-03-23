@@ -36,7 +36,7 @@ namespace moveSMART {
      * TODO: show whether the step counter is counting
      */
     //%block
-    export function isCounting(): number {
+    export function isCounting(): Boolean {
         return counting
     }
 

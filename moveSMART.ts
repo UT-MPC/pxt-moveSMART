@@ -6,7 +6,7 @@
 namespace moveSMART {
     //variables
     let step = 0;
-    let counting: Boolean = false;
+    let counting: boolean = false;
 
     /**
      * TODO: start counting steps

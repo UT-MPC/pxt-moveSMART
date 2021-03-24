@@ -21,3 +21,13 @@ input.onButtonPressed(Button.AB, function () {
     }
 })
 ```
+
+## Step 4
+
+step+=1
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    step = moveSMART.newStep(step)
+})
+```

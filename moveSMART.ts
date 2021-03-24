@@ -2,7 +2,7 @@
 /**
  * Custom blocks
  */
-//% weight=100 color=#CC5500 icon="\uf1ae"
+//% weight=100 color=#08415d icon="\uf1ae"
 namespace moveSMART {
     //variables
     let step = 0;
@@ -36,7 +36,7 @@ namespace moveSMART {
      * TODO: show whether the step counter is counting
      */
     //%block
-    export function isCounting(): number {
+    export function isCounting(): Boolean {
         return counting
     }
 

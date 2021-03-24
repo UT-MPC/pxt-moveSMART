@@ -40,6 +40,14 @@ namespace moveSMART {
         return counting
     }
 
+    /**
+     * TODO: return new step count
+     */
+    //% block
+    export function newStep(step: number): number {
+        return (step+1)
+    }
+
     //helper functions
     input.onGesture(Gesture.Shake, function () {
         if (counting) {

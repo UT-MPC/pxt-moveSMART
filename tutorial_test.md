@@ -13,3 +13,11 @@ On your screen, you see two blue *blocks*. They say ``||Basic:on start||`` and `
 ## Step 3
 
 please show up....
+
+```blocks
+input.onButtonPressed(Button.AB, function () {
+    if (input.buttonIsPressed(Button.A)) {
+        basic.showNumber(0)
+    }
+})
+```

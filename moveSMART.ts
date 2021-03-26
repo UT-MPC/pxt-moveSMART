@@ -53,13 +53,18 @@ namespace moveSMART {
      * TODO: continue increasing steps if user has pressed "Start Counting"
      */
     //% block
-
-    //helper functions
     export function countSteps(): void {
         if (counting) {
                 step += 1
             }
     }
+
+    //helper functions
+    input.onGesture(Gesture.Shake, function () {
+        if (counting) {
+            step += 1
+        }
+    })
 
     function step_count(): number {
         return step

@@ -46,4 +46,15 @@ input.onGesture(Gesture.Shake, function () {
 
 ## Step 7
 
+Now that we have assembled all the pieces together, we need to tell the @boardname@ to show us what the current step count is.
+Do you remember what we did with the ``||basic:forever||`` block and the ``||moveSMART:show step count||`` block?
+
+```blocks
+basic.forever(function () {
+    moveSMART.showStepCount()
+})
+```
+
+## Step 8
+
 Now that we have assembled all the pieces together, try it out on the @boardname@!

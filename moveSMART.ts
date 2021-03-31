@@ -45,7 +45,12 @@ namespace moveSMART {
      */
     //% block
     export function newStep(step: number): number {
-        return (step+1)
+        if (counting) {
+            return (step+1)
+        }
+        else {
+            return step
+        }            
     }
 
     

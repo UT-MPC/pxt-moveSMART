@@ -36,7 +36,8 @@ TODO: write about screen monitor rotation detection
 
 ## Step 6
 
-Since the @boardname@ can detect motion with an accelerometer, we can use this to create our pedometer. Specifically, the ``||input:on shake||`` block provides the program with a list of things to do when the accelerometer detected some motion on the @boardname@, and that the program should do. What we want to do now is to provide the list. Can you guess what should be on the list now?
+The ``||input:on shake||`` block provides the program with a list of things to do when the accelerometer detected some motion on the @boardname@.
+What we want to do now is to provide the list of things to do, such that when the @boardname@ is moving, the step count can increase. Can you figure out how to do that with the ``||input:on shake||`` block?
 Hint: There's a block in the **moveSMART** menu called ``||moveSMART:increase step count||``. What it does is it increases the number shown on the @boardname@ by one.
 
 ```block
@@ -48,7 +49,8 @@ input.onGesture(Gesture.Shake, function () {
 ## Step 7
 
 Look at the picture of the @boardname@ on the left. When you click on **shake**, the number on the @boardname@ should increase by one.
-You can try deleting the ``||input:on shake||`` block. Why doesn't anything happen now when you click **shake**? What happens if you put the ``||input:on shake||`` block and the ``||moveSMART:increase step count||`` block back?
+You can try deleting the ``||input:on shake||`` block. Why does the number stay at 0 now even when you "shake" the @boardname@? 
+Put the ``||input:on shake||`` block and the ``||moveSMART:increase step count||`` block back. Does the @boardname@ respond to your shakes now?
 
 ## Step 8
 

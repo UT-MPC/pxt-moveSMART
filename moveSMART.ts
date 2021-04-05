@@ -1,4 +1,3 @@
-
 /**
  * Custom blocks
  */
@@ -6,7 +5,8 @@
 namespace moveSMART {
     //variables
     let step = 0;
-    let counting: boolean = false;
+    let counting: Boolean = false;
+    let count_timer: Boolean = false;
 
     /**
      * TODO: start counting steps
@@ -24,6 +24,22 @@ namespace moveSMART {
     }
 
     /**
+     * TODO: start counting steps (using timer)
+     */
+    //%block weight = 500
+    export function startCounter(): void {
+        count_timer = true
+    }
+
+    /**
+     * TODO: stop counting steps (using timer)
+     */
+    //%block weight = 550
+    export function stopCounter(): void {
+        count_timer = false
+    }
+
+    /**
      * TODO: show number of steps
      */
     //%block weight=1000
@@ -36,7 +52,7 @@ namespace moveSMART {
      * TODO: show whether the step counter is counting
      */
     //%block
-    export function isCounting(): boolean {
+    export function isCounting(): Boolean {
         return counting
     }
 
@@ -45,15 +61,10 @@ namespace moveSMART {
      */
     //% block
     export function newStep(step: number): number {
-        if (counting) {
-            return (step+1)
-        }
-        else {
-            return step
-        }            
+        return (step+1)
     }
 
-    
+
     /**
      * TODO: continue increasing steps if user has pressed "Start Counting"
      */
@@ -71,8 +82,16 @@ namespace moveSMART {
         }
     })
 
+    basic.forever(function () { //step counter using only timer
+        if (count_timer) {
+            basic.pause(1500)
+            step += 1
+        }
+    })
+
     function step_count(): number {
         return step
     }
 
 }
+

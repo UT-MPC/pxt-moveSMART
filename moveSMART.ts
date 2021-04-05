@@ -2,6 +2,7 @@
  * Custom blocks
  */
 //% weight=100 color=#08415d icon="\uf1ae"
+//% groups="['Simple Pedometer', 'Sensor Pedometer']"
 namespace moveSMART {
     //variables
     let step = 0;
@@ -28,6 +29,7 @@ namespace moveSMART {
      * TODO: start counting steps (using timer)
      */
     //%block weight = 500
+    //%group="Simple Pedometer"
     export function startCounter(): void {
         count_timer = true
     }
@@ -36,6 +38,7 @@ namespace moveSMART {
      * TODO: stop counting steps (using timer)
      */
     //%block weight = 550
+    //%group="Simple Pedometer"
     export function stopCounter(): void {
         count_timer = false
     }
@@ -53,6 +56,7 @@ namespace moveSMART {
      * TODO: show the number of steps for the step counter (using sensors) without buttons
      */
     //%block weight=1050
+    //%group="Sensor Pedometer"
     export function showNumberOfSteps(): void {
         basic.showNumber(step_no_button)
         basic.pause(100)
@@ -62,6 +66,7 @@ namespace moveSMART {
      * TODO: add this block to on shake for the step counter (using sensors) without buttons
      */
     //%block weight=1100
+    //%group="Sensor Pedometer"
     export function increaseStepCount(): void {
         step_no_button += 1
     }

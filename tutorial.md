@@ -18,7 +18,7 @@ The ``||Basic:forever||`` block tells the @boardname@ a list of things to do *fo
 
 ## Step 5
 
-The way our step counter will work is to start counting when you press *Button A*, and to stop counting when you press *Button B*.
+The way our step counter will work is to start counting when you press a button, and to stop counting when we press another button. We'll go over the details in later steps.
 
 ## Step 6
 
@@ -40,7 +40,7 @@ Look at the picture of the @boardname@ on the left. You should see it now show "
 
 ## Step 9
 
-Next, we need to figure out how to start counting steps. Look at the picture on the left. The @boardname@ has two buttons: A and B. When you press A, we'll start counting steps. When you press B, we'll stop counting steps.
+Next, we need to figure out how to start counting steps. Look at the picture on the left. The @boardname@ has two buttons: A and B (the black circles next to the A and the B in the triangle). When you press A, we'll start counting steps. When you press B, we'll stop counting steps.
 
 ## Step 10
 
@@ -64,8 +64,6 @@ input.onButtonPressed(Button.B, function () {
 ```
 
 ## Step 12
-
+Look at the virtual @boardname@ again. To start counting, press the A button (the black circle next to the A in the traingle). The @boardname@ will assume that you have started walking, so you will see the number on the @boardname@ increase. When you stop walking, press the B button, and the number will stay there. 
 Did you get it? You should have dragged the ``||input:on button A pressed||`` block to your workspace and clicked the triangle next to A. Then choose B. Then drag the ``||moveSMART:stop counting||`` block inside the mouth of the ``||input:on button A pressed||`` block.
 
-## Step 13
-Look at the virtual @boardname@ again. To start counting, press the A button (the black circle next to the A in the traingle). To make a step, you need to shake the @boardname@. Since our @boardname@ isn't real, we just push the little white circle where it says "shake" to pretend to shake it. To stop counting, press the B button. 

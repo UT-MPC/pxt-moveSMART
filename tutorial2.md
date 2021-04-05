@@ -1,3 +1,8 @@
+```template
+basic.forever(function () {
+	
+})
+```
 # ProjectSMART Pedometer Tutorial -- Level 2
 # Learning about sensors
 
@@ -8,53 +13,43 @@ In this tutorial, we will learn how to make use of the sensors on the @boardname
 
 ## Step 2
 
-First, we need to start counting steps. We will do this the same way we did in the last tutorial. The @boardname@ has two buttons: A and B. When you press A, we'll start counting steps. When you press B, we'll stop counting steps.
+TODO: In the previous tutorial, ...
 
 ## Step 3
 
-Do you remember what to do with the ``||input:on button A pressed||`` block from the **Input** menu and the ``||moveSMART:start counting||`` block from the **moveSMART** menu?
+From the **moveSMART** menu, you will find the ``||moveSMART:show number of steps||`` block. Can you figure out where to put ``||moveSMART:show number of steps||`` so that your step count shows up on the @boardname@?
 
-```blocks
-input.onButtonPressed(Button.A, function () {
-    moveSMART.startCounting()
+```block
+basic.forever(function () {
+    moveSMART.showNumberOfSteps()
 })
 ```
 
 ## Step 4
 
-Tell the @boardname@ to stop counting steps when you press the B button. Hint: Create a ``||input:on button B pressed||`` block. Use that and the ``||moveSMART:stop counting||`` block.
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-    moveSMART.stopCounting()
-})
-```
+TODO: something about sensors, accelerometers, ...
 
 ## Step 5
 
-Now, we want to tell the @boardname@ that when a shake is detected, the step count must increase by one.
+There's a block called ``||input:on shake||`` in the **input** menu. The @boardname@ has an inbuilt tool called an **accelerometer**. Accelerometers are sensors that can detect change in _velocity_ (you can think of it as _speed_ for now) in all three axes.
+TODO: write about screen monitor rotation detection
 
 ## Step 6
 
-To do this, we have ``||input:on shake||`` and ``||moveSMART:count steps||``. Can you figure out what to do with these two blocks?
+Since the @boardname@ can detect motion with an accelerometer, we can use this to create our pedometer. Specifically, the ``||input:on shake||`` block provides the program with a list of things to do when the accelerometer detected some motion on the @boardname@, and that the program should do. What we want to do now is to provide the list. Can you guess what should be on the list now?
+Hint: There's a block in the **moveSMART** menu called ``||moveSMART:increase step count||``. What it does is it increases the number shown on the @boardname@ by one.
 
-```blocks
+```block
 input.onGesture(Gesture.Shake, function () {
-    moveSMART.countSteps()
+    moveSMART.increaseStepCount()
 })
 ```
 
 ## Step 7
 
-Now that we have assembled all the pieces together, we need to tell the @boardname@ to show us what the current step count is.
-Do you remember what we did with the ``||basic:forever||`` block and the ``||moveSMART:show step count||`` block?
-
-```blocks
-basic.forever(function () {
-    moveSMART.showStepCount()
-})
-```
+Look at the picture of the @boardname@ on the left. When you click on **shake**, the number on the @boardname@ should increase by one.
+You can try deleting the ``||input:on shake||`` block. Why doesn't anything happen now when you click **shake**? What happens if you put the ``||input:on shake||`` block and the ``||moveSMART:increase step count||`` block back?
 
 ## Step 8
 
-Now that we have assembled all the pieces together, try it out on the @boardname@!
+Look at the @boardname@ on the left again. When you take a step, the @boardname@ detects a shake, and the number will increase. It is now a pedometer-- a device that counts how many steps you take.

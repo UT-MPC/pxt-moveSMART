@@ -5,18 +5,19 @@
 namespace moveSMART {
     //variables
     let step = 0;
+    let step_no_button = 0;
     let counting: Boolean = false;
     let count_timer: Boolean = false;
 
     /**
-     * TODO: start counting steps
+     * TODO: start counting steps (on shake)
      */
     //%block weight=3000
     export function startCounting(): void {
         counting = true
     }
     /**
-     * TODO: stop counting steps
+     * TODO: stop counting steps (on shake)
      */
     //%block weight=2000
     export function stopCounting(): void {
@@ -46,6 +47,23 @@ namespace moveSMART {
     export function showStepCount(): void {
         basic.showNumber(step_count())
         basic.pause(100)
+    }
+
+    /**
+     * TODO: show the number of steps for the step counter (using sensors) without buttons
+     */
+    //%block weight=1050
+    export function showNumberOfSteps(): void {
+        basic.showNumber(step_no_button)
+        basic.pause(100)
+    }
+
+    /**
+     * TODO: add this block to on shake for the step counter (using sensors) without buttons
+     */
+    //%block weight=1100
+    export function increaseStepCount(): void {
+        step_no_button += 1
     }
 
     /**
@@ -88,6 +106,7 @@ namespace moveSMART {
             step += 1
         }
     })
+
 
     function step_count(): number {
         return step

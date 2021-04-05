@@ -18,7 +18,7 @@ The ``||Basic:forever||`` block tells the @boardname@ a list of things to do *fo
 
 ## Step 5
 
-The way our step counter will work is to detect anytime the @boardname@ *shakes*. When the program detects the @boardname@ is shaken, it will count one step.
+The way our step counter will work is to start counting when you press *Button A*, and to stop counting when you press *Button B*.
 
 ## Step 6
 
@@ -49,7 +49,7 @@ Click on the pink target. Look for the ``||input:on button A pressed||`` block. 
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
-    moveSMART.startCounting()
+    moveSMART.startCounter()
 })
 ```
 
@@ -59,7 +59,7 @@ Try this one on your own first. Tell the @boardname@ to stop counting steps when
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
-    moveSMART.stopCounting()
+    moveSMART.stopCounter()
 })
 ```
 

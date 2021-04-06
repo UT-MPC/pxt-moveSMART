@@ -1,3 +1,11 @@
+```template
+input.onGesture(Gesture.Shake, function () {
+    moveSMART.increaseStepCount()
+})
+basic.forever(function () {
+    moveSMART.showNumberOfSteps()
+})
+```
 # ProjectSMART Pedometer Tutorial -- Level 3
 # Learning about Variables
 

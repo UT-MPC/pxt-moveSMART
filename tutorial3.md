@@ -5,6 +5,7 @@ input.onGesture(Gesture.Shake, function () {
 basic.forever(function () {
     moveSMART.showNumberOfSteps()
 })
+let step = 0
 ```
 # ProjectSMART Pedometer Tutorial -- Level 3
 # Learning about Variables

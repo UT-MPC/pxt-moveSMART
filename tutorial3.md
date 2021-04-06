@@ -26,9 +26,6 @@ Now 3 additional blocks will appear in the **Variables** drawer: ``||variables: 
 Click on the blue icon, and find the ``||basic:on start||`` block. This block provides the program with a list of things to do when the program starts running.
 In this case, we want **step** to be 0 when the program starts running.
 
-```blocks
-```
-
 ## Step 6
 
 In the red icon, find the ``||variables: set step to 0||`` block. This is what we want to tell the program to do when the program starts running.

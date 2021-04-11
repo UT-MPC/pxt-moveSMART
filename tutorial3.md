@@ -23,7 +23,7 @@ Variables are objects that have a name and a value. For example, let's say you a
 
 ## Step 3
 
-The value of a variable doesn't have to be a number. It could be practically any type, such as a string (word), or a Boolean (a fancy word for True/False). For example, a variable called _President_ could have value _"Biden"_.
+The value of a variable doesn't have to be a number. It could be practically any type, such as a string (word), or a Boolean (a fancy word for True/False). For example, a variable called _President_ could have value _"Biden"_, and a variable called _skyIsGreen_ could have value _False_.
 
 ## Step 4
 

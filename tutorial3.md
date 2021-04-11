@@ -13,16 +13,17 @@ let step = 0
 
 ## Step 1
 
-In this tutorial, we will learn what **variables** are.
+In this tutorial, we will learn what **variables** are, and learn how to use them in a program.
+On your screen, you see the pedometer from the previous tutorial.
+We will be making the same pedometer with **variables** instead of with the help of the moveSMART blocks.
 
 ## Step 2
 
-TODO: Brief explanation of variables, ...
+Variables are objects that have a name and a value. For example, let's say you are 9 years old right now. So we can create a variable called _age_, and set its value to 9. Then next year, we can change the value of variable _age_ to 10.
 
 ## Step 3
 
-On your screen, you see the pedometer from the previous tutorial.
-In this tutorial, we will be making the same pedometer without the help of the moveSMART blocks.
+The value of a variable doesn't have to be a number. It could be practically any type, such as a string (word), or a Boolean (a fancy word for True/False). For example, a variable called _President_ could have value _"Biden"_.
 
 ## Step 4
 

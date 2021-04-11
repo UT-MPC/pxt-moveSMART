@@ -13,9 +13,11 @@ In this tutorial, we will learn how to make use of the sensors on the @boardname
 
 ## Step 2
 
-TODO: In the previous tutorial, ...
+In the previous tutorial, we made a pedometer that doesn't actually know how many steps you have walked. In this tutorial, we will learn how to let the @boardname@ detect how many steps you have walked and keep count. 
 
 ## Step 3
+
+First, let's show the number of steps on the @boardname@.
 
 From the **moveSMART** menu, you will find the ``||moveSMART:show number of steps||`` block. Can you figure out where to put ``||moveSMART:show number of steps||`` so that your step count shows up on the @boardname@?
 
@@ -27,12 +29,16 @@ basic.forever(function () {
 
 ## Step 4
 
-TODO: something about sensors, accelerometers, ...
+Next, we need something to detect the number of steps you have walked.
+
+For this, we need a sensor called an accelerometer. Accelerometers are sensors that can detect movement and change in _velocity_ (you can think of it as _speed_ for now) in all three axes.
+
+Accelerometers are everywhere in our lives. When you tilt a smart phone, the screen rotates. That's because smart phones have accelerometers inside, which detects movement.
 
 ## Step 5
 
-There's a block called ``||input:on shake||`` in the **input** menu. The @boardname@ has an inbuilt tool called an **accelerometer**. Accelerometers are sensors that can detect change in _velocity_ (you can think of it as _speed_ for now) in all three axes.
-TODO: write about screen monitor rotation detection
+The @boardname@ also has an **accelerometer**. It senses when the @boardname@ is shaken.
+We can make use of the **accelerometer** with a block called ``||input:on shake||``. It is in the **input** menu. 
 
 ## Step 6
 

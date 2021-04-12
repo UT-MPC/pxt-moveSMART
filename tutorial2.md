@@ -31,14 +31,14 @@ basic.forever(function () {
 
 Next, we need something to detect the number of steps you have walked.
 
-For this, we need a sensor called an accelerometer. Accelerometers are sensors that can detect movement and change in _velocity_ (you can think of it as _speed_ for now) in all three axes.
+For this, we need a sensor called an accelerometer. Accelerometers are sensors that can detect movement and change in _velocity_ (you can think of it as _speed_ plus _direction_ for now) in all three axes.
 
-Accelerometers are everywhere in our lives. When you tilt a smart phone, the screen rotates. That's because smart phones have accelerometers inside, which detects movement.
+Accelerometers are everywhere in our lives. When you tilt a smart phone, the screen rotates. That's because smart phones have accelerometers inside, which detects change in _speed_ or _direction_, or both.
 
 ## Step 5
 
 The @boardname@ also has an **accelerometer**. It senses when the @boardname@ is shaken.
-We can make use of the **accelerometer** with a block called ``||input:on shake||``. It is in the **input** menu. 
+We can make use of the **accelerometer** with a block called ``||input:on shake||``, which is in the **input** menu. 
 
 ## Step 6
 

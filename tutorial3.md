@@ -37,6 +37,8 @@ The value of a variable doesn't have to be a number. It could be practically any
 In the menu, you will see an icon with four red stripes. This is where you can create variables.
 Click on the icon, then click on `Make a Variable`, and create a variable called **step**.
 
+Several new blocks should appear.
+
 ## Step 5
 
 Find the ``||basic:on start||`` block inside the ``||basic:Basic||`` drawer.
@@ -53,6 +55,7 @@ let step=0
 You can delete the ``||variables: set step to 0||`` block from the ``||basic:on start||`` block for now (but be sure to add it back later!).
 Try replacing it with something else for now. For example, if you place ``||basic:show number 10||`` in ``||basic:on start||``,
 which number(s) show up on the screen? Why?
+
 Make sure to add the ``||variables: set step to 0||`` block back to the ``||basic:on start||`` block before you proceed!
 
 ```blocks
@@ -80,9 +83,12 @@ basic.forever(function () {
 You can try changing the number in the ``||variables: set step to 0||`` block.
 Does the number shown on the @boardname@ change? Why, or why not?
 
+Make sure to change the number back to 0!
+
 ## Step 10
 
-Next, we want the number on the @boardname@ to increase when we shake the @boardname@. We did this in the previous tutorial with the ``||moveSMART:increase step count||`` and the ``||input: on shake||`` block. Can you figure out how to do this with your variable ``||variables: step||`` and the ``||input: on shake||`` block?
+Next, we want the number on the @boardname@ to increase when we shake the @boardname@. We did this in the previous tutorial with the ``||moveSMART:increase step count||`` and the ``||input: on shake||`` block.
+In this tutorial, we want to achieve this without the moveSMART blocks. 
 
 ## Step 11
 
@@ -105,7 +111,7 @@ input.onGesture(Gesture.Shake, function () {
 
 Look at the @boardname@ on the left again.
 When the @boardname@ detects a shake, and the number will increase by 1.
-You can try changing the number in the bubble in ``||variable: change step by 1||`` into 2.
+You can try changing the number in the bubble in ``||variables: change step by 1||`` into 2.
 Now, when you shake the @boardname@, the number will increase by 2.
 Remember to change the number back to 1, though, so that it will only count once for every step you take!
 

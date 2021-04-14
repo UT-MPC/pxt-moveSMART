@@ -5,7 +5,6 @@ input.onGesture(Gesture.Shake, function () {
 basic.forever(function () {
     moveSMART.showNumberOfSteps()
 })
-let step = 0
 ```
 # ProjectSMART Pedometer Tutorial -- Level 3
 # Learning about Variables
@@ -16,6 +15,14 @@ let step = 0
 In this tutorial, we will learn what **variables** are, and learn how to use them in a program.
 On your screen, you see the pedometer from the previous tutorial.
 We will be making the same pedometer with **variables** instead of with the help of the moveSMART blocks.
+You can delete the moveSMART blocks right now.
+
+```blocks
+input.onGesture(Gesture.Shake, function () {
+})
+basic.forever(function () {
+})
+```
 
 ## Step 2
 
@@ -28,13 +35,18 @@ The value of a variable doesn't have to be a number. It could be practically any
 ## Step 4
 
 In the menu, you will see an icon with four red stripes. This is where you can create variables.
-For this tutorial, we have created a variable called **step** for you already, but feel free to create your own.
+Click on the icon, then click on `Make a Variable`, and create a variable called **step**.
 
 ## Step 5
 
-On the screen, you can see the ``||basic:on start||`` block with the ``||variables: set step to 0||`` block inside.
-This ``||basic:on start||`` block provides the program with a list of things to do when the program starts running.
-To create a pedometer, we want **step** to be 0 when the program starts running because it should start counting at 0.
+Find the ``||basic:on start||`` block inside the ``||basic:Basic||`` drawer.
+The ``||basic:on start||`` block provides the program with a list of things to do when the program starts running.
+To create a pedometer, we want **step** to be 0 when the program starts running because it should start counting at 0. Can you figure out what to put into the mouth of ``||basic:on start||``?
+
+Hint: Find a block in the ``||variables:Variables||`` drawer.
+```blocks
+let step=0
+```
 
 ## Step 6
 
@@ -50,12 +62,12 @@ let step=0
 ## Step 7
 
 Now we want to show **step** on the @boardname@. Find the ``||basic:show number 0||`` block in the blue icon, and drag it onto the screen.
-Next, drag ``||variable: step||`` into the bubble that shows **0** in the ``||basic:show number 0||`` block.
+Next, drag ``||variables: step||`` into the bubble that shows **0** in the ``||basic:show number 0||`` block.
 
 ## Step 8
 
 In the previous tutorial, we used ``||moveSMART:show number of steps||``.
-Now, delete ``||moveSMART:show number of steps||`` from the ``||basic:forever||`` block, and replace it with what you created in the previous step.
+Now, delete ``||moveSMART:show number of steps||`` from the ``||basic:forever||`` block if you haven't done that already, and replace it with what you created in the previous step.
 
 ```blocks
 basic.forever(function () {
@@ -70,12 +82,13 @@ Does the number shown on the @boardname@ change? Why, or why not?
 
 ## Step 10
 
-Try shaking the @boardname@ now. Why doesn't the number increase?
+Next, we want the number on the @boardname@ to increase when we shake the @boardname@. We did this in the previous tutorial with the ``||moveSMART:increase step count||`` and the ``||input: on shake||`` block. Can you figure out how to do this with your variable ``||variables: step||`` and the ``||input: on shake||`` block?
 
 ## Step 11
 
-That is because the program is showing the **step** that you created, but we haven't told the program to increase **step** when you shake the @boardname@.
-To do this, we have to replace the ``||moveSMART:increase step count||`` block in the ``||input: on shake||`` block with something else.
+We have to tell the program to increase **step** when you shake the @boardname@.
+
+Hint: replace the ``||moveSMART:increase step count||`` block in the ``||input: on shake||`` block with something else.
 
 ## Step 12
 

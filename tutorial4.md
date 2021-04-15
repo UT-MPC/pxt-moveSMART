@@ -13,7 +13,7 @@ basic.forever(function () {
 
 ## Step 1
 
-In this tutorial, we will learn about control flows, and make a pedometer where you have more control over.
+In this tutorial, we will learn about control flows, and make a pedometer that you have more control over.
 
 ## Step 2
 
@@ -27,7 +27,7 @@ For example, in our first tutorial, if we push button A, then the @boardname@ wi
 
 ## Step 4
 
-We want to create a pedometer that does the same thing-- when you push button A, the @boardname@ will count the steps when you shake it; when you push button B, the @boardname@ will stop counting steps.
+We want to create a pedometer that does the same thing-- `if` you push button A, `then` the @boardname@ will count the steps when you shake it; `if` you push button B, `then` the @boardname@ will stop counting steps.
 
 ## Step 5
 
@@ -35,7 +35,7 @@ First, create another variable (you can name it **count**) that tells the progra
 If the pedometer should be counting, then ``||variables:count||`` should have a value **True**.
 Otherwise, **count** will have value **False**.
 You can think of it as on/off, where on is called **True**, and off is called **False**.
-Look in the **Logic** drawer, and find ``||logic:false||``.
+Look in the ``||logic:Logic||`` drawer, and find ``||logic:false||``.
 Let ``||variables:count||`` be ``||logic:false||`` when the program starts running. That's because the pedometer should be off when the program starts.
 
 ```blocks

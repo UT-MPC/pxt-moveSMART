@@ -15,7 +15,7 @@ basic.forever(function () {
 In this tutorial, we will learn what **variables** are, and learn how to use them in a program.
 On your screen, you see the pedometer from the previous tutorial.
 We will be making the same pedometer with **variables** instead of with the help of the moveSMART blocks.
-You can delete the moveSMART blocks right now.
+You can delete the ``||moveSMART:moveSMART||`` blocks (just the dark blue moveSMART blocks!) right now.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -26,7 +26,10 @@ basic.forever(function () {
 
 ## Step 2
 
-Variables are objects that have a name and a value. For example, let's say you are 9 years old right now. So we can create a variable called _age_, and set its value to 9. Then next year, we can change the value of variable _age_ to 10.
+Variables are objects that have a name and a value.
+When something is variable, it means that it can change.
+
+For example, let's say you are 9 years old right now. So we can create a variable called _age_, and set its value to 9. Then next year, we can change the value of variable _age_ to 10.
 
 ## Step 3
 
@@ -41,36 +44,35 @@ Several new blocks should appear.
 
 ## Step 5
 
+Recall that when something is variable, that means it can change.
+That's why ``||variables:step||`` is called a variable, because it can change to store different values.
+
+## Step 6
+
+Now that we have our variable ``||variables:step||``, we want to give it a value.
+
 Find the ``||basic:on start||`` block inside the ``||basic:Basic||`` drawer.
 The ``||basic:on start||`` block provides the program with a list of things to do when the program starts running.
-To create a pedometer, we want **step** to be 0 when the program starts running because it should start counting at 0. Can you figure out what to put into the mouth of ``||basic:on start||``?
+To create a pedometer, we want ``||variables: step||`` to be 0 when the program starts running because it should start counting at 0. Can you figure out what to put into the mouth of ``||basic:on start||``?
 
 Hint: Find a block in the ``||variables:Variables||`` drawer.
 ```blocks
 let step=0
 ```
 
-## Step 6
-
-You can delete the ``||variables: set step to 0||`` block from the ``||basic:on start||`` block for now (but be sure to add it back later!).
-Try replacing it with something else for now. For example, if you place ``||basic:show number 10||`` in ``||basic:on start||``,
-which number(s) show up on the screen? Why?
-
-Make sure to add the ``||variables: set step to 0||`` block back to the ``||basic:on start||`` block before you proceed!
-
-```blocks
-let step=0
-```
-
 ## Step 7
 
-Now we want to show **step** on the @boardname@. Find the ``||basic:show number 0||`` block in the blue icon, and drag it onto the screen.
-Next, drag ``||variables: step||`` into the bubble that shows **0** in the ``||basic:show number 0||`` block.
+Now we want to show **step** on the @boardname@.
+In the previous tutorial, we used ``||moveSMART:show number of steps||``.
+
+In this tutorial, we will do this without the help of ``||moveSMART:moveSMART||`` blocks.
+Delete ``||moveSMART:show number of steps||`` from the ``||basic:forever||`` block.
+But make sure to not delete the ``||basic:forever||`` block! If you accidentally delete the ``||basic:forever||`` block, you can find it in the blue ``||basic:Basic||`` drawer.
 
 ## Step 8
 
-In the previous tutorial, we used ``||moveSMART:show number of steps||``.
-Now, delete ``||moveSMART:show number of steps||`` from the ``||basic:forever||`` block if you haven't done that already, and replace it with what you created in the previous step.
+Find the ``||basic:show number 0||`` block in the blue icon, and drag it into the mouth of the ``||basic:forever||`` block.
+Next, drag ``||variables: step||`` into the bubble that shows **0** in the ``||basic:show number 0||`` block.
 
 ```blocks
 basic.forever(function () {
@@ -88,7 +90,7 @@ Make sure to change the number back to 0!
 ## Step 10
 
 Next, we want the number on the @boardname@ to increase when we shake the @boardname@. We did this in the previous tutorial with the ``||moveSMART:increase step count||`` and the ``||input: on shake||`` block.
-In this tutorial, we want to achieve this without the moveSMART blocks. 
+In this tutorial, we want to achieve this without the ``||moveSMART:moveSMART||`` blocks. 
 
 ## Step 11
 
@@ -118,4 +120,3 @@ Remember to change the number back to 1, though, so that it will only count once
 ## Step 14
 
 The @boardname@ is now a pedometer-- a device that counts how many steps you take.
-

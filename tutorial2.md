@@ -9,7 +9,7 @@ basic.forever(function () {
 
 ## Step 1
 
-In this tutorial, we will learn how to make use of the sensors on the @boardname@ to make a *pedometer*.
+In this tutorial, we will learn how to make use of the sensors on the @boardname@ to make a *pedometer*-- a device that counts how many steps you take.
 
 ## Step 2
 
@@ -31,7 +31,8 @@ basic.forever(function () {
 
 Next, we need something to detect the number of steps you have walked.
 
-For this, we need a sensor called an accelerometer. Accelerometers are sensors that can detect movement and change in _velocity_ (you can think of it as _speed_ plus _direction_ for now) in all three axes.
+For this, we need a sensor called an accelerometer. Accelerometers are sensors that can detect movement and change in _velocity_ (you can think of it as _speed_ plus _direction_ for now) in all three axes
+-- that is, accelerometers can detect movement that is up or down, side to side, and forward or back.
 
 Accelerometers are everywhere in our lives. When you tilt a smart phone, the screen rotates. That's because smart phones have accelerometers inside, which detects change in _speed_ or _direction_, or both.
 

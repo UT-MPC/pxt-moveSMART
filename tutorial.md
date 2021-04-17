@@ -44,7 +44,7 @@ Next, we need to figure out how to start counting steps. Look at the picture on 
 
 ## Step 10
 
-Click on the pink target. Look for the ``||input:on button A pressed||`` block. Drag it to your workspace. Now look inside the moveSMART menu for the ``||moveSMART:start counter||`` block. Drag it inside the mouth of the `on button A pressed` block.
+Click on the pink target. Look for the ``||input:on button A pressed||`` block. Drag it to your workspace. Now look inside the moveSMART menu for the ``||moveSMART:start counter||`` block. Drag it inside the mouth of the ``||input:on button A pressed||`` block.
 
 
 ```blocks

@@ -134,7 +134,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 10
+## Step 11
 
 Finally, let's show the rate on the @boardname@.
 So instead of showing the number of steps at all time, let's show ``||variables: rate||`` when we're not counting.
@@ -151,3 +151,7 @@ basic.forever(function () {
     }
 })
 ```
+
+## Step 12
+
+Now we have a pedometer that also shows your step rate!

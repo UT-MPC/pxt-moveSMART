@@ -26,7 +26,7 @@ In this tutorial, we will learn how to calculate your step rate.
 
 ## Step 2
 
-Step rate is the number of steps per minute. Mathematically speaking, this is step count divided by the time elapsed.
+Step rate is the number of steps per second. Mathematically speaking, this is step count divided by the time elapsed.
 
 Why should we care about this?
 
@@ -41,7 +41,7 @@ In this tutorial, we want to create a timer that can help us calculate your step
 
 How this works is that when button A is pressed, we will start counting steps, and also start the timer.
 When button B is pressed, we will stop the timer and stop counting steps.
-Then we take the number of steps, and divide it by the number of minutes elapsed.
+Then we take the number of steps, and divide it by the number of seconds elapsed.
 
 ## Step 4
 
@@ -86,8 +86,8 @@ input.onButtonPressed(Button.B, function () {
 ## Step 7
 
 Next, let's calculate your step rate.
-Recall that it is the number of steps divided by the number of minutes elapsed.
-How do we get the number of minutes elapsed with startTime and endTime?
+Recall that it is the number of steps divided by the number of seconds elapsed.
+How do we get the number of seconds elapsed with startTime and endTime?
 
 First, let's subtract endTime by startTime. That's the number of milliseconds between when button A is pressed and button B is pressed.
 

@@ -106,6 +106,17 @@ Then you divide *4000* by *1000*.
 
 ## Step 9
 
+Now that we have the number of seconds elapsed, we can divide the number of steps by the number of seconds, and we'll get the number of steps per second.
+How do we get the number of steps per *minute* from the number of steps per *second*?
+
+Recall that a minute has 60 seconds. If you took 1 step per second, how many steps will you take in a minute?
+
+## Step 10
+
+Did you figure it out? If you took 1 step per second, how many steps will you take in a minute?
+Answer: you will take 60 steps in a minute.
+Likewise, if we know the number of steps per second, we can just multiply it by 60 to get the number of steps per minute.
+
 Let's do this when you press button B.
 First, create another variable, and call it ``||variables: rate||``
 In the ``||math: math||`` tray you will find blocks for subtraction and division.
@@ -116,10 +127,10 @@ Note: the ``||math: math||`` blocks might be a little bit confusing. It could he
 input.onButtonPressed(Button.B, function () {
     counting = false
     endTime = input.runningTime()
-    rate = step / (endTime - startTime) / 1000
+    rate = (step / ((endTime - startTime) / 1000)) * 60
 })
 ```
-rate = step / (endTime - startTime) / 1000
+rate = (step / ((endTime - startTime) / 1000)) * 60
 
 ## Step 10
 

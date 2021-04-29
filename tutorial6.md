@@ -1,11 +1,18 @@
 ```template
 let counting = false
+let startTime = 0
+let endTime = 0
+let rate = 0
 let step = 0
 input.onButtonPressed(Button.A, function () {
     counting = true
+    startTime = input.runningTime()
 })
 input.onButtonPressed(Button.B, function () {
     counting = false
+    endTime = input.runningTime()
+    rate = (step / ((endTime - startTime) / 1000)) * 60
+    step = 0
 })
 input.onGesture(Gesture.Shake, function () {
     if (counting) {
@@ -13,45 +20,46 @@ input.onGesture(Gesture.Shake, function () {
     }
 })
 basic.forever(function () {
-    basic.showNumber(step)
+    if (counting) {
+        basic.showNumber(step)
+    } else {
+        basic.showNumber(rate)
+    }
 })
+
 ```
 
 # ProjectSMART Pedometer Tutorial -- Level 6
-# Learning about Serial
+# Learning about Control Flow -- If, Else If, Else
 
 ## Step 1
 
-In this tutorial, we will learn how to send your level of activeness from the @boardname@ to another computer via **serial communication**.
+In this tutorial, we will learn how to map your step rate to level of activeness.
 
 ## Step 2
 
-Serial communication is a way of sending data.
-You don't need to know about the specifics of serial communication for now.
+In the previous tutorial, we calculated step rate. Now, we're going to map it into 3 different levels of activeness -- very active, active, and less active.
 
 ## Step 3
 
-On your screen you see the pedometer we built in the last tutorial.
-In this tutorial, we want to add another functionality:
-when buttons A and B are pressed at the same time, we want the @boardname@ to send the level of your activeness through serial.
-First, let's create the ``||input: on button A+B pressed||`` by dragging the ``||input:on button A pressed||`` block to your workspace, and change A to A+B.
+We went over ``||logic: if||`` and ``||logic: else||`` briefly in the previous tutorial.
+In this tutorial, we're going to learn about ``||logic: else if||``.
 
 ## Step 4
 
-Next, we want to transform the number of steps to the level of activeness.
-We learned about ``||logic:if...then||`` last time. This time, we're going to learn about ``||logic: if...then...else if... else||``.
+You can find the ``||logic: if...then...else if... else||`` block in the ``||logic: logic||`` tray.
 Let's break down ``||logic: if...then...else if... else||`` into three components: ``||logic: if||``, ``||logic: else if||``, and ``||logic: else||``.
 
 ## Step 5
 
-``||logic: if||`` means that if something is true (let's call it *condition 1*), then the program will execute whatever code that follows,
+``||logic: if||`` means that if **something** is true (let's call this **something** *condition 1*), then the program will execute whatever code that follows,
 and will ignore ``||logic: else if||`` and ``||logic: else||``.
 
-However, if *condition 1* is false, then ``||logic: else if||`` tells the program to check if something else is true (let's call it *condition 2*).
+However, if *condition 1* is false, then ``||logic: else if||`` tells the program to check if **something else** is true (let's call **something else** *condition 2*).
 If *condition 2* is true, then the program will execute the code that follows.
 
-We can have as many ``||logic: else if||``s as we like.
 In this case, if *condition 2* is false, then the program will look for the next ``||logic: else if||``.
+(We can have as many ``||logic: else if||``s as we like!)
 If there are no more ``||logic: else if||``s, then the program will look for ``||logic: else||``.
 
 ``||logic: else||`` is executed if none of the conditions in the ``||logic: if||`` and ``||logic: else if||`` are met.
@@ -59,67 +67,66 @@ If there are no more ``||logic: else if||``s, then the program will look for ``|
 ## Step 6
 
 How do we use ``||logic: if...then...else if... else||`` to transform the number of steps to the level of activeness?
-First, let's say we have 3 levels of activeness:
+First, we have 3 levels of activeness:
 
 **1** is less active, **2** is active, and **3** is very active.
 
 Make a variable called ``||variables: activeness||`` to store the level of activeness.
 
-Let's say if you got less than 10 steps, you're less active.
-If you're between 11 to 100, then you're active,
-and if you got 100 steps or more, you're very active.
+If the number of steps per minute is above 60 but less than 120, then you're active.
 
-So,
-``||logic: if||`` you achieved less than 10 steps, then you are less active.
+If it's over 120, then you're very active.
 
+If the number of steps per minute less than 60, then you're less active.
 
 ## Step 7
 
-Otherwise, if you achieved less than 100 steps, meaning you got more than 10 steps but did not go over 100 steps, you are active.
+Let's take a closer look.
 
-In block language, you can say ``||logic: else if||`` ``||variables: step||`` is greater than 100, then you're active.
+If the number of steps per minute less than 60, then you're less active.
+That is, ``||logic: if||`` ``||variables:rate||`` is less than 60, then ``||variables: activeness||`` should be 1.
 
-``||logic: else||``, you're very active, because you achieved 100 steps or more.
+Otherwise, if the number of steps per minute is less than 120, then you're active.
+That is, ``||logic: else if||`` ``||variables:rate||`` is less than 120, then ``||variables: activeness||`` should be 2.
+
+If the rate is 120 or more, then you're *very* active.
+In other words, ``||logic: else||``, ``||variables: activeness||`` is 3.
+
+Drag the ``||logic: if...then...else||`` block onto the work space.
+Click on the plus sign on the bottom left of the block to get the ``||logic: else if||``.
+You can click on the plus sign several times to get several ``||logic: else if||``s,
+but in this tutorial we only need one, so click on the minus sign on the right to delete any extra ``||logic: else if||``s.
 
 ```blocks
-input.onButtonPressed(Button.AB, function () {
-    if (step < 10) {
+input.onButtonPressed(Button.B, function () {
+    counting = false
+    endTime = input.runningTime()
+    rate = (step / ((endTime - startTime) / 1000)) * 60
+    basic.showNumber(rate)
+    if (rate < 60) {
         activeness = 1
-    } else if (step < 100) {
+    } else if (rate < 120) {
         activeness = 2
     } else {
         activeness = 3
     }
-})
-```
-You can adjust the numbers yourself! It doesn't have to be 10 and 100; you can use any numbers you like.
-
-## Step 8
-
-Now that we have calculated the level of activeness, we will send ``||variables: activeness||`` via ``||serial:serial||``.
-Click on **Advanced** and find the ``||serial:serial||`` tray.
-
-Since ``||variables: activeness||`` is a number, we'll use ``||serial: serial writeNumber||``.
-
-```blocks
-serial.writeNumber(activeness)
-```
-Put this into the ``||Input: on button A+B pressed||`` block.
-
-## Step 9
-
-After sending the level of activeness, remember to reset ``||variables: step||``.
-
-```blocks
-input.onButtonPressed(Button.AB, function () {
-    if (step < 10) {
-        activeness = 1
-    } else if (step < 100) {
-        activeness = 2
-    } else {
-        activeness = 3
-    }
-    serial.writeNumber(activeness)
     step = 0
 })
 ```
+You can adjust the numbers yourself! It doesn't have to be 60 and 120; you can use any *reasonable* numbers you like.
+
+## Step 8
+
+Now, instead of showing the ``||variables: rate||`` on the screen, we can show ``||variables: activeness||`` instead.
+This makes the pedometer much cleaner.
+
+```blocks
+basic.forever(function () {
+    if (counting) {
+        basic.showNumber(step)
+    } else {
+        basic.showNumber(activeness)
+    }
+})
+```
+

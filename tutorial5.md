@@ -110,15 +110,16 @@ Let's do this when you press button B.
 First, create another variable, and call it ``||variables: rate||``
 In the ``||math: math||`` tray you will find blocks for subtraction and division.
 
-Note: drag the ``||math: division||`` block first, and then put the ``||math:subtraction||`` block into the bubble on the left.
+Note: the ``||math: math||`` blocks might be a little bit confusing. It could help to write down the mathematical forms! 
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
     counting = false
     endTime = input.runningTime()
-    rate = (endTime - startTime) / 1000
+    rate = step / (endTime - startTime) / 1000
 })
 ```
+rate = step / (endTime - startTime) / 1000
 
 ## Step 10
 
@@ -129,7 +130,7 @@ so that when you press on button A the next time, you can get a new step count a
 input.onButtonPressed(Button.B, function () {
     counting = false
     endTime = input.runningTime()
-    rate = (endTime - startTime) / 1000
+    rate = step / ((endTime - startTime) / 1000)
     step = 0
 })
 ```
@@ -139,7 +140,11 @@ input.onButtonPressed(Button.B, function () {
 Finally, let's show the rate on the @boardname@.
 So instead of showing the number of steps at all time, let's show ``||variables: rate||`` when we're not counting.
 
-Do you remember how to do that?
+We learned about ``||logic: if...then||`` in the previous tutorial.
+Now, we're going to use ``||logic: if...then...else||``, which is similar. ``||logic: if||`` a condition is met, then the program will execute something.
+Otherwise (represented by ``||logic: else||``), the program will execute something else.
+
+Can you figure out what to do?
 Hint: look in the ``||logic: logic||`` tray.
 
 ```block

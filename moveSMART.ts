@@ -98,6 +98,15 @@ namespace moveSMART {
             }
     }
 
+    /**
+     * TODO: send activeness
+     */
+    //% block
+    export function sendActiveness(activeness: number): void {
+        radio.setGroup(2)
+        radio.sendValue("RFID", activeness)
+    }
+
     //helper functions
     input.onGesture(Gesture.Shake, function () {
         if (counting) {

@@ -105,6 +105,7 @@ namespace moveSMART {
     export function sendActiveness(activeness: number): void {
         radio.setGroup(2)
         radio.sendValue("RFID", activeness)
+        basic.showIcon(IconNames.Happy)
     }
 
     //helper functions

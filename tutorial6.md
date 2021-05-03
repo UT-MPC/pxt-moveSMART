@@ -130,3 +130,23 @@ basic.forever(function () {
 })
 ```
 
+## Step 9
+
+Next, let's send this rate via radio over to the box!
+We'll be using ``||moveSMART:sendActiveness||`` to transmit your level of activeness to another @boardname@ connected to the box,
+and the connected @boardname@ will act as a gateway to transmit your rate over.
+
+You don't have to worry about the details about radio now.
+The ``||moveSMART:sendActiveness||`` block will take care of it.
+
+## Step 10
+
+When you press both buttons A and B at the same time,
+we want your @boardname@ to call ``||moveSMART:sendActiveness||`` block.
+
+```blocks
+input.onButtonPressed(Button.AB, function () {
+    moveSMART.sendActiveness(activeness)
+})
+```
+The @boardname@ will show a smiley face when the level of activeness is sent.

@@ -75,4 +75,5 @@ Did you get it? You should have dragged the ``||input:on button A pressed||`` bl
 
 ## Step 13
 
-Look at the picture of the @boardname@ on your screen again. To start counting, press the A button (the black circle next to the A in the traingle). The @boardname@ will assume that you have started walking, so you will see the number on the @boardname@ increase. When you stop walking, press the B button, and the number will stay there. 
+Look at the picture of the @boardname@ on your screen again. To see how the timer works, we can press the pretend buttons on the picture of the @boardname@.
+To start counting, press the A button (the black circle next to the A in the traingle). The @boardname@ will assume that you have started walking, so you will see the number on the @boardname@ increase. When you stop walking, press the B button, and the number will stay there. 

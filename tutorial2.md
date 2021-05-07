@@ -13,7 +13,7 @@ In this tutorial, we will learn how to make use of the sensors on the @boardname
 
 ## Step 2
 
-In the previous tutorial, we made a pedometer that doesn't actually know how many steps you have walked. In this tutorial, we will learn how to let the @boardname@ detect how many steps you have walked and keep count. 
+In the previous tutorial, we made a timer. In this tutorial, we will learn how to let the @boardname@ detect how many steps you have walked and keep count. 
 
 ## Step 3
 
@@ -31,10 +31,7 @@ basic.forever(function () {
 
 Next, we need something to detect the number of steps you have walked.
 
-For this, we need a sensor called an accelerometer. Accelerometers are sensors that can detect movement and change in _velocity_ (you can think of it as _speed_ plus _direction_ for now) in all three axes
--- that is, accelerometers can detect movement that is up or down, side to side, and forward or back.
-
-Accelerometers are everywhere in our lives. When you tilt a smart phone, the screen rotates. That's because smart phones have accelerometers inside, which detects change in _speed_ or _direction_, or both.
+For this, we need a sensor called an accelerometer.
 
 ## Step 5
 
@@ -62,3 +59,7 @@ Put the ``||input:on shake||`` block and the ``||moveSMART:increase step count||
 ## Step 8
 
 Look at the @boardname@ on the left again. When you take a step, the @boardname@ detects a shake, and the number will increase. It is now a pedometer-- a device that counts how many steps you take.
+
+## Step 9
+
+Flash your code to your @boardname@ and see how it works!

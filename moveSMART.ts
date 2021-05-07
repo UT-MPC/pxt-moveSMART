@@ -30,7 +30,7 @@ namespace moveSMART {
      */
     //%block weight = 500
     //%group="Simple Pedometer"
-    export function startCounter(): void {
+    export function startTimer(): void {
         count_timer = true
     }
 
@@ -39,7 +39,7 @@ namespace moveSMART {
      */
     //%block weight = 550
     //%group="Simple Pedometer"
-    export function stopCounter(): void {
+    export function stopTimer(): void {
         count_timer = false
     }
 
@@ -48,6 +48,15 @@ namespace moveSMART {
      */
     //%block weight=1000
     export function showStepCount(): void {
+        basic.showNumber(step_count())
+        basic.pause(100)
+    }
+
+    /**
+     * TODO: show timer
+     */
+    //%block weight=1000
+    export function showTimer(): void {
         basic.showNumber(step_count())
         basic.pause(100)
     }
@@ -117,7 +126,7 @@ namespace moveSMART {
 
     basic.forever(function () { //step counter using only timer
         if (count_timer) {
-            basic.pause(1500)
+            basic.pause(1000) //1 per second
             step += 1
         }
     })

@@ -81,7 +81,7 @@ To start counting, press the A button (the black circle next to the A in the tra
 ## Step 14
 
 Now, we want to transfer the code onto the real @boardname@.
-Watch the video [Transferring your program to the BBC micro:bit] (https://www.youtube.com/watch?v=-FZ8yTnoozY).
+Watch the video [Transferring your program to the BBC micro:bit](https://www.youtube.com/watch?v=-FZ8yTnoozY).
 
 Press the **Download** on the bottom left. You should see the lights on your @boardname@ flashing.
 

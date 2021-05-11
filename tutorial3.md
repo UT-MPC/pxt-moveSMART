@@ -16,14 +16,6 @@ In this tutorial, we will learn how to use **variables** in a program.
 On your screen, you see the pedometer from the previous tutorial.
 
 We will be making the same pedometer with **variables** instead of with the help of the moveSMART blocks.
-You can delete the ``||moveSMART:moveSMART||`` blocks (just the dark blue moveSMART blocks!) right now.
-
-```blocks
-input.onGesture(Gesture.Shake, function () {
-})
-basic.forever(function () {
-})
-```
 
 ## Step 2
 
@@ -50,6 +42,8 @@ But make sure to not delete the ``||basic:forever||`` block! If you accidentally
 
 Find the ``||basic:show number 0||`` block in the blue icon, and drag it into the mouth of the ``||basic:forever||`` block.
 Next, drag ``||variables: step||`` into the bubble that shows **0** in the ``||basic:show number 0||`` block.
+
+Look at the @boardname@ on the left. Does a red 0 appear?
 
 ```blocks
 basic.forever(function () {

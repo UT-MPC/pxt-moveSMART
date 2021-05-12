@@ -12,36 +12,37 @@ basic.forever(function () {
 
 ## Step 1
 
-In this tutorial, we will learn how to use **variables** in a program.
 On your screen, you see the pedometer from the previous tutorial.
-
-We will be making the same pedometer with **variables** instead of with the help of the moveSMART blocks.
 
 ## Step 2
 
 In the menu, you will see an icon with four red stripes. This is where you can create variables.
-Click on the icon, then click on `Make a Variable`, and create a variable called **step**.
+1. Click on the icon
+2. Click on `Make a Variable`
+3. In the box below `New variable name`, type **step**, and press Ok.
 
 Several new blocks should appear.
+You have created a variable called **step**!
 
 ## Step 3
 
 Recall that when something is variable, that means it can change.
-That's why ``||variables:step||`` is called a variable, because it can change to store different values.
+``||variables:step||`` can change to store different values. That's why ``||variables:step||`` is called a variable.
 
 ## Step 4
 
-Now that we have our variable ``||variables:step||``, we want to show **step** on the @boardname@.
+We want the @boardname@ to show the value of ``||variables:step||``.
 In the previous tutorial, we used ``||moveSMART:show number of steps||``.
 
-In this tutorial, we will do this without the help of ``||moveSMART:moveSMART||`` blocks.
-Delete ``||moveSMART:show number of steps||`` from the ``||basic:forever||`` block.
-But make sure to not delete the ``||basic:forever||`` block! If you accidentally delete the ``||basic:forever||`` block, you can find it in the blue ``||basic:Basic||`` drawer.
+Go to the next step to see how to do this with your ``||variables:step||`` variable instead.
 
 ## Step 5
 
-Find the ``||basic:show number 0||`` block in the blue icon, and drag it into the mouth of the ``||basic:forever||`` block.
-Next, drag ``||variables: step||`` into the bubble that shows **0** in the ``||basic:show number 0||`` block.
+1. Delete ``||moveSMART:show number of steps||`` from the ``||basic:forever||`` block.
+(But make sure to not delete the ``||basic:forever||`` block! If you accidentally delete the ``||basic:forever||`` block, you can find it in the blue ``||basic:Basic||`` drawer.)
+2. Find the ``||basic:show number 0||`` block in the blue ``||basic:Basic||`` drawer
+3.  Drag the ``||basic:show number 0||`` block into the mouth of the ``||basic:forever||`` block.
+4. Drag ``||variables: step||`` into the bubble that shows **0** in the ``||basic:show number 0||`` block.
 
 Look at the @boardname@ on the left. Does a red 0 appear?
 
@@ -53,19 +54,21 @@ basic.forever(function () {
 
 ## Step 6
 
-Next, we want the number on the @boardname@ to increase when we shake the @boardname@. We did this in the previous tutorial with the ``||moveSMART:increase step count||`` and the ``||input: on shake||`` block.
-In this tutorial, we want to achieve this without the ``||moveSMART:moveSMART||`` blocks. 
+Oh no, if you click on the white dot next to `SHAKE` on the @boardname@, the number doesn't change anymore.
+
+Don't worry, we'll fix this in the next 2 steps.
 
 ## Step 7
 
-We have to tell the program to increase **step** when you shake the @boardname@.
+First, delete the ``||moveSMART:increase step count||`` block from the ``||input: on shake||`` block. We will replace it with your ``||variables:step||`` variable in the next step.
 
-Hint: replace the ``||moveSMART:increase step count||`` block in the ``||input: on shake||`` block with something else.
+If you accidentally delete the ``||input: on shake||`` block, you can find it in the pink ``||input:Input||`` drawer.
 
 ## Step 8
 
-Did you figure out what to put into the mouth of the ``||input: on shake||`` block?
-Hint: look into the red *Variables* drawer. What should the program do when the @boardname@ is shaken?
+Next, let's tell the program to increase (change) the ``||variables:step||`` variable by 1 when you "shake" the @boardname@.
+
+Look into the red ``||variables:Variables||`` drawer. Can you figure out what to put into the mouth of the ``||input: on shake||`` block?
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -76,11 +79,16 @@ input.onGesture(Gesture.Shake, function () {
 ## Step 9
 
 Look at the @boardname@ on the left again.
-When the @boardname@ detects a shake, and the number will increase by 1.
-You can try changing the number in the bubble in ``||variables: change step by 1||`` into 2.
-Now, when you shake the @boardname@, the number will increase by 2.
+When you "shake" the @boardname@ (click on the white dot next to `SHAKE`), the number will change by 1.
+Try changing the number in the bubble in ``||variables: change step by 1||`` into 2, or some other number.
+Now, when you "shake" the @boardname@, the number will increase by another number.
+
 Remember to change the number back to 1, though, so that it will only count once for every step you take!
 
 ## Step 10
 
 The @boardname@ is now a pedometer-- a device that counts how many steps you take.
+You can now flash your code into your real @boardname@!
+
+Press the **Download** on the bottom left of your screen.
+You should see the lights on your real @boardname@ flashing.

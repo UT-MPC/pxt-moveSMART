@@ -2,7 +2,7 @@
  * Custom blocks
  */
 //% weight=100 color=#08415d icon="\uf1ae"
-//% groups="['Simple Pedometer', 'Sensor Pedometer']"
+//% groups="['Simple Pedometer', 'Sensor Pedometer', 'Radio']"
 namespace moveSMART {
     //variables
     let step = 0;
@@ -111,10 +111,10 @@ namespace moveSMART {
      * TODO: send activeness
      */
     //% block
-    export function sendActiveness(activeness: number): void {
-        radio.setGroup(2)
-        radio.sendValue("RFID", activeness)
-        basic.showIcon(IconNames.Happy)
+    //% group="Radio"
+    export function sendActiveness(activeness: number, name: string = "", address: number = 1): void {
+        radio.setGroup(1)
+        radio.sendValue(name, activeness)
     }
 
     //helper functions

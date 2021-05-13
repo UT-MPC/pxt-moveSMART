@@ -9,7 +9,7 @@ basic.forever(function () {
 
 ## Step 1
 
-In the previous tutorial, we made a timer. In this tutorial, we will learn how to let the @boardname@ detect how many steps you have walked and keep count. 
+In this tutorial, we will make a physical activity sensor. The @boardname@'s accelerometer senses when the @boardname@ moves. When the @boardname@ is attached to you (in your hand, in your pocket, or in your sock), the accelerometer is also sensing when **you** move! When the @boardname@ is near your ankle or foot, the accelerometer is basically counting how many steps you take.
 
 ## Step 2
 
@@ -56,6 +56,10 @@ You can try deleting the ``||input:on shake||`` block. Why does the number stay 
 Put the ``||input:on shake||`` block and the ``||moveSMART:increase step count||`` block back. Does the @boardname@ respond to your shakes now?
 
 ## Step 7
+
+You made a step counter! When the @boardname@ is close to your foot or ankle it will count the number of steps you take. But you can also use it to measure your physical activity in general, just by having it in your hand or pocket.
+
+## Step 8
 
 Flash your code to your @boardname@ and see how it works!
 Press the **Download** on the bottom left of your screen.

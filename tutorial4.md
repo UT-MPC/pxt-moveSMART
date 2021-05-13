@@ -13,48 +13,32 @@ basic.forever(function () {
 
 ## Step 1
 
-In this tutorial, we will learn about control flows, and make a pedometer that you have more control over.
+What you created is shown on the screen. In this tutorial, we will give it on/off buttons.
+
+First, create another variable (you can name it **count**) that tells the program if the pedometer should be counting steps.
+If the ``||variables:count||`` variable is **True**, then the pedometer will count your steps.
+If the ``||variables:count||`` variable is **False**, the pedometer will not count.
+
+You can think of it as on/off, where on is called **True**, and off is called **False**.
 
 ## Step 2
 
-Control flow is the order in which instructions are executed in a program.
-We can change or decide the control flow of a program with something called _control flow statement_. You have seen one before-- the ``||basic:forever||`` block, which tells the program to execute some instructions _forever_.
-
-## Step 3
-
-Another common _control flow statement_, which we will learn about in this tutorial, is the `if...then` statement. It simply tells the program that `if` something is **True**, `then` do something.
-For example, in our first tutorial, if we push button A, then the @boardname@ will start counting steps. If we push button B, then the @boardname@ will stop counting steps. 
-
-## Step 4
-
-We want to create a pedometer that does the same thing-- `if` you push button A, `then` the @boardname@ will count the steps when you shake it; `if` you push button B, `then` the @boardname@ will stop counting steps.
-
-## Step 5
-
-First, create another variable (you can name it **count**) that tells the program if the pedometer should be counting steps.
-If the pedometer should be counting, then ``||variables:count||`` should have a value **True**.
-Otherwise, **count** will have value **False**.
-You can think of it as on/off, where on is called **True**, and off is called **False**.
-Look in the ``||logic:Logic||`` drawer, and find ``||logic:false||``.
-Let ``||variables:count||`` be ``||logic:false||`` when the program starts running. That's because the pedometer should be off when the program starts.
+Set ``||variables:count||`` to ``||logic:false||`` when the program starts running.
+That's because the pedometer should be off when the program starts.
+You can find the ``||logic:false||`` block at the bottom of the ``||logic:Logic||`` drawer.
 
 ```blocks
-let step = 0
 let count = false
 ```
 
-## Step 6
-
-Next, we want to be able to control the value of ``||variables:count||``.
-We can use buttons A and B for this.
-Do you remember that in tutorial 1, we turned on and off the pedometer by pressing button A and button B?
-Now we're trying to build the same thing.
-
-## Step 7
+## Step 3
 
 We want button A to be the *on* button, and button B to be the *off* button.
-In other words, we want ``||variables:count||`` to turn into ``||logic:true||`` when button A is pressed,
-and to turn into ``||logic:false||`` when button B is pressed.
+This way, we can turn on the pedometer by pressing button A. Then we can press button B to turn it off.
+
+In other words, when button A is pressed, set the ``||variables:count||`` variable to ``||logic:true||``. 
+When button B is pressed, set ``||variables:count||`` to ``||logic:false||``.
+
 Hint: ``||logic:true||`` and ``||logic:false||`` are both values. You can set the value of ``||variables:count||`` by using ``||variables:set count to||``.
 
 ```blocks
@@ -66,39 +50,30 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 8
+## Step 4
 
-Now that we can control the value of ``||variables:count||``,
-we can control the behavior of the program such that when ``||variables:count||`` is ``||logic:true||`` it executes a set of instructions, 
-and when ``||variables:count||`` is ``||logic:false||`` it executes another set of instructions.
+Now, we can change the ``||variables:count||`` variable by pressing buttons A and B.
 
-## Step 9
+But we're not quite there yet! Press button B, and then press the white dot next to `SHAKE`. The number still increases!
 
-Right now, there is only one block in the mouth of the ``||input:on shake||`` block.
-We want to change this so that ``||variables:change step by 1||`` is executed if and only if ``||variables:count||`` is ``||logic:true||``.
-Look in the logic drawer, and drag the ``||logic:if true then||`` block onto the screen.
-The ``||logic:if true then||`` block tells the program what to do when the value is true.
+Don't worry. Go to the next step.
 
-```blocks
-if (true) {
-}
-```
-Ignore the ``||basic:on start||`` block in the hint
+## Step 5
 
-## Step 10
-
-You can replace the ``||logic:true||`` in the ``||logic:if true then||`` block with any variable that has value ``||logic:true||`` or ``||logic:false||``.
+Look in the logic drawer, and drag the ``||logic:if true then||`` block onto the screen and into the ``||input:on shake||`` block.
 
 ```blocks
-if (count) {
-}
+input.onGesture(Gesture.Shake, function () {
+    if (true) {
+        step += 1
+    }
+})
 ```
-Ignore the ``||basic:on start||`` block in the hint
 
-## Step 11
+## Step 6
 
-Remember, what we're trying to achieve here is that when the @boardname@ is shaken, step increases if and only if ``||variables:count||`` is ``||logic:true||``.
-How can we do this?
+You can replace the ``||logic:true||`` in the ``||logic:if true then||`` block with any variable that has value ``||logic:true||`` or ``||logic:false||``. 
+Can you figure out what to do with your ``||variables:count||`` variable?
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -108,8 +83,16 @@ input.onGesture(Gesture.Shake, function () {
 })
 ```
 
-## Step 12
+## Step 7
 
 Look at the @boardname@ and try "shaking" it. Does the number increase?
-Press button A, and shake again. What happens now?
-Press button B, and shake. Do you know what is happening?
+Press button A, and shake again.
+Press button B, and shake. Do you know what the program is doing?
+
+## Step 8
+
+The @boardname@ is now a pedometer that you can turn on and off!
+You can now flash your code into your real @boardname@.
+
+Press the **Download** on the bottom left of your screen.
+You should see the lights on your real @boardname@ flashing.

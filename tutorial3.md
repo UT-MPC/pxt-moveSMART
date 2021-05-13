@@ -12,7 +12,7 @@ basic.forever(function () {
 
 ## Step 1
 
-On your screen, you see the pedometer from the previous tutorial.
+On your screen, you see the physical activity monitor from the previous tutorial.
 
 ## Step 2
 
@@ -22,12 +22,11 @@ In the menu, you will see an icon with four red stripes. This is where you can c
 3. In the box below `New variable name`, type **step**, and press Ok.
 
 Several new blocks should appear.
-You have created a variable called **step**!
+You just created a variable called **step**!
 
 ## Step 3
 
-Recall that when something is variable, that means it can change.
-``||variables:step||`` can change to store different values. That's why ``||variables:step||`` is called a variable.
+Recall that when something is variable, that means it can change. The value stored in ``||variables:step||`` can change. That's why ``||variables:step||`` is called a variable.
 
 ## Step 4
 

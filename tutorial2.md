@@ -58,4 +58,7 @@ Put the ``||input:on shake||`` block and the ``||moveSMART:increase step count||
 ## Step 7
 
 Flash your code to your @boardname@ and see how it works!
+Press the **Download** on the bottom left of your screen.
+You should see the lights on your real @boardname@ flashing.
+
 Remember to head back to the tutorial webpage, and complete the rest of the activity.

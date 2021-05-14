@@ -38,7 +38,7 @@ Delete ``||moveSMART:increase step count||`` from the ``||input: on shake||`` bl
 
 ## Step 5
 
-Find the ``||basic:show number 0||`` block in the blue ``||basic:Basic||`` drawer. Drag the ``||basic:show number 0||`` into the mouth of ``||basic:forever||``. Drag ``||variables: step||`` from the ``||variables:Variables]]`` drawer into the bubble that shows **0** in the ``||basic:show number 0||`` block.
+Find the ``||basic:show number 0||`` block in the blue ``||basic:Basic||`` drawer. Drag the ``||basic:show number 0||`` into the mouth of ``||basic:forever||``. Drag ``||variables: step||`` from the ``||variables:Variables||`` drawer into the bubble that shows **0** in the ``||basic:show number 0||`` block.
 
 Look at the @boardname@ on the left. Does a red 0 appear?
 

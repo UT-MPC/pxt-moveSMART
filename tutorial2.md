@@ -11,6 +11,8 @@ basic.forever(function () {
 
 In this tutorial, we will make a physical activity sensor. The @boardname@'s accelerometer senses when the @boardname@ moves. When the @boardname@ is attached to you (in your hand, in your pocket, or in your sock), the accelerometer is also sensing when **you** move! When the @boardname@ is near your ankle or foot, the accelerometer is basically counting how many steps you take.
 
+So in this tutorial, we're going to make a pedometer -- that's a fancy word for a device that counts how many steps you take.
+
 ## Step 2
 
 First, let's show the number of steps on the @boardname@.

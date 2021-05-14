@@ -79,7 +79,7 @@ Remember to change the number back to 1, though, so that it will only count once
 
 ## Step 9
 
-The @boardname@ is now a pedometer-- a device that counts how many steps you take.
+The @boardname@ is a pedometer again. But now it uses a variable!.
 You can now flash your code into your real @boardname@!
 
 Press the **Download** on the bottom left of your screen.

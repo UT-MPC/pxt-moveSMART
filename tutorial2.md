@@ -59,12 +59,14 @@ Put the ``||input:on shake||`` block and the ``||moveSMART:increase step count||
 
 ## Step 7
 
-You made a step counter! When the @boardname@ is close to your foot or ankle it will count the number of steps you take. But you can also use it to measure your physical activity in general, just by having it in your hand or pocket.
+You just made a step counter! When the @boardname@ is close to your foot or ankle it will count the number of steps you take. But you can also use it to measure your physical activity in general, just by having it in your hand or pocket.
 
 ## Step 8
 
 Flash your code to your @boardname@ and see how it works!
 Press the **Download** on the bottom left of your screen.
 You should see the lights on your real @boardname@ flashing.
+
+Unplug the USB cable and make sure the batteries are plugged in. Then test it out!
 
 Remember to head back to the tutorial webpage, and complete the rest of the activity.

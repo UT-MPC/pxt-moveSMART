@@ -17,8 +17,9 @@ Here is the physical activity monitor you already wrote.
 ## Step 2
 
 In the menu, find the icon with four red stripes. This is where you can create variables.
-1. Click on the icon
-2. Click on `Make a Variable`
+1. Click on the four red stripes
+2. Click on the rectangle that says **Make a Variable...**
+![Make a Variable](make-a-variable.png)
 3. In the box below `New variable name`, type **step**, and press Ok.
 
 Several new blocks should appear.

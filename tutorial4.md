@@ -1,5 +1,5 @@
 ```template
-let step = 0
+let step = 1
 input.onGesture(Gesture.Shake, function () {
     step += 1
 })

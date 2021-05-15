@@ -19,7 +19,7 @@ Here is the physical activity monitor you already wrote.
 In the menu, find the icon with four red stripes. This is where you can create variables.
 1. Click on the four red stripes
 2. Click on the rectangle that says **Make a Variable...**
-![Make a Variable](make-a-variable.png)
+![Make a Variable](https://raw.githubusercontent.com/UT-MPC/pxt-moveSMART/master/make-a-variable.png)
 3. In the box below `New variable name`, type **step**, and press Ok.
 
 Several new blocks should appear.
@@ -27,7 +27,7 @@ You just created a variable with the **name** *step*!
 
 ## Step 3
 
-The **value** stored in ``||variables:step||`` starts at 0, but it can change. That's why ``||variables:step||`` is called a variable.
+The **value** stored in ``||variables:step||`` starts at 0, but it can change. Because its value can vary, ``||variables:step||`` is called a variable.
 
 ## Step 4
 
@@ -35,11 +35,15 @@ In the previous tutorial, we used the ``||moveSMART:MoveSmart||`` blocks to meas
 
 Delete ``||moveSMART:show number of steps||`` from the ``||basic:forever||`` block. (But don't delete the ``||basic:forever||`` block! If you accidentally do, you can find it again in the blue ``||basic:Basic||`` drawer.)
 
-Delete ``||moveSMART:increase step count||`` from the ``||input: on shake||`` block. (But don't delete ``||input: on shake||``! If you accidentally do, you can find it again in the blue ``||basic:Basic||`` drawer.)
+Delete ``||moveSMART:increase step count||`` from the ``||input: on shake||`` block. (But don't delete ``||input: on shake||``! If you accidentally do, you can find it again in the pink ``||input:Input||`` drawer.)
 
 ## Step 5
 
-Find the ``||basic:show number 0||`` block in the blue ``||basic:Basic||`` drawer. Drag the ``||basic:show number 0||`` into the mouth of ``||basic:forever||``. Drag ``||variables: step||`` from the ``||variables:Variables||`` drawer into the bubble that shows **0** in the ``||basic:show number 0||`` block.
+Find the ``||basic:show number 0||`` block in the blue ``||basic:Basic||`` drawer.
+Drag the ``||basic:show number 0||`` into the mouth of ``||basic:forever||``.
+
+Drag ``||variables: step||`` from the ``||variables:Variables||`` drawer into the bubble that shows **0** in the ``||basic:show number 0||`` block.
+Now that it says "show number step", it should display the **value** of ``||variables:step||`` on the pretend @boardname@.
 
 Look at the @boardname@ on the left. Does a red 0 appear?
 
@@ -83,5 +87,5 @@ Remember to change the number back to 1, though, so that it will only count once
 The @boardname@ is a pedometer again. But now it uses a variable!.
 You can now flash your code into your real @boardname@!
 
-Press the **Download** on the bottom left of your screen.
+Press the ``|Download|`` on the bottom left of your screen.
 You should see the lights on your real @boardname@ flashing.

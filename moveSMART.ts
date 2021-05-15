@@ -117,6 +117,14 @@ namespace moveSMART {
         radio.sendValue(name, activeness)
     }
 
+    /**
+     * TODO: gets the number of seconds elapsed since power on
+     */
+    //% block
+    export function runningTimeSec(): number {
+        return Math.floor(input.runningTime()/1000)
+    }
+
     //helper functions
     input.onGesture(Gesture.Shake, function () {
         if (counting) {

@@ -83,6 +83,6 @@ You should see the lights on your @boardname@ flashing.
 
 ## Step 14
 
-Press the buttons on your real @boardname@. Does it work?
+Press the buttons on your real @boardname@. Does it work? If you want to reset your timer to 0, press the reset button on the back of the @boardname@.
 
 Now head back into the tutorial webpage. You should still have it open in a tab in your browser.

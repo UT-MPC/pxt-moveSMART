@@ -2,7 +2,9 @@
 
 ## Step 1
 
-On your screen, you see two blue *blocks*. They say ``||Basic:on start||`` and ``||Basic:forever||``. 
+On your screen, you see two blue *blocks*. They say ``||Basic:on start||`` and ``||Basic:forever||``.
+
+(Hint: Click **Next** to go to the next step)
 
 ## Step 2
 
@@ -68,7 +70,7 @@ input.onButtonPressed(Button.B, function () {
 ## Step 12
 
 Look at the picture of the @boardname@ on your screen again. To see how the timer works, we can press the pretend buttons on the picture of the @boardname@.
-To start counting, press the A button (the black circle next to the A in the traingle). The @boardname@ will start the timer, so you will see the number on the @boardname@ increase. To stop the timer, press the B button, and the number will stay there.
+To start counting, press the A button (the black circle next to the A in the triangle). The @boardname@ will start the timer, so you will see the number on the @boardname@ increase. To stop the timer, press the B button, and the number will stay there.
 
 When the number is bigger than 9, it doesn't fit on the small set of LEDs, so the @boardname@ will make the number scroll.
 
@@ -77,7 +79,7 @@ When the number is bigger than 9, it doesn't fit on the small set of LEDs, so th
 Now, we want to transfer the code onto the real @boardname@.
 Watch the video [Transferring your program to the BBC micro:bit](https://www.youtube.com/watch?v=-FZ8yTnoozY).
 
-Press the ``|Download|`` on the bottom left. Next, click ``|Pair Device|`` (it's in a gray button). Make sure your @boardname@ is connected to your computer using the USB cable. Then click the purple ``|Pair Device|`` button. In the window that appears, select the @boardname@ device (It should start with "BBC micro:bit...") Click the Connect button. Now click the purple ``|Download|`` button again.
+Press the ``|Download|`` on the bottom left. Next, click **Pair Device** (it's in a gray button). Make sure your @boardname@ is connected to your computer using the USB cable. Then click the purple **Pair Device** button. In the window that appears, select the @boardname@ device (It should start with "BBC micro:bit...") Click the Connect button. Now click the purple ``|Download|`` button again.
 
 You should see the lights on your @boardname@ flashing.
 

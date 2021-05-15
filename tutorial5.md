@@ -151,5 +151,5 @@ basic.forever(function () {
 Now we have a physical activity sensor that also shows your step rate!
 You can now flash your code into your real @boardname@.
 
-Press the **Download** on the bottom left of your screen.
+Press the ``|Download|`` on the bottom left of your screen.
 You should see the lights on your real @boardname@ flashing.

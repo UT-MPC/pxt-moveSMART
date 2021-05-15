@@ -64,7 +64,7 @@ You just made a step counter! When the @boardname@ is close to your foot or ankl
 ## Step 8
 
 Flash your code to your @boardname@ and see how it works!
-Press the **Download** on the bottom left of your screen.
+Press the ``|Download|`` on the bottom left of your screen.
 You should see the lights on your real @boardname@ flashing.
 
 Unplug the USB cable and make sure the batteries are plugged in. Then test it out!

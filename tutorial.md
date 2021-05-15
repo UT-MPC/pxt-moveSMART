@@ -77,7 +77,7 @@ When the number is bigger than 9, it doesn't fit on the small set of LEDs, so th
 Now, we want to transfer the code onto the real @boardname@.
 Watch the video [Transferring your program to the BBC micro:bit](https://www.youtube.com/watch?v=-FZ8yTnoozY).
 
-Press the **Download** on the bottom left. Next, click **Pair Device** (it's in a gray button). Make sure your @boardname@ is connected to your computer using the USB cable. Then click the purple **Pair Device** button. In the window that appears, select the @boardname@ device (It should start with "BBC micro:bit...") Click the Connect button. Now click the purple **Download** button again.
+Press the ``|Download|`` on the bottom left. Next, click ``|Pair Device|`` (it's in a gray button). Make sure your @boardname@ is connected to your computer using the USB cable. Then click the purple ``|Pair Device|`` button. In the window that appears, select the @boardname@ device (It should start with "BBC micro:bit...") Click the Connect button. Now click the purple ``|Download|`` button again.
 
 You should see the lights on your @boardname@ flashing.
 

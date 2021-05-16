@@ -13,9 +13,10 @@ basic.forever(function () {
 
 ## Step 1
 
-What you created is shown on the screen. In this tutorial, we will give it on/off buttons.
+What you created in the previous tutorial is shown on the screen. In this tutorial, we will give it on/off buttons.
 
-First, create another variable (you can name it **on**) that tells the program if the pedometer should be counting steps.
+Our new program will have **two** variable. So, first, create a second variable (you can name it **on**) that we will use to tell the program if the pedometer should be counting steps or not.
+
 To create a variable, click on the icon with 4 red stripes, then press **Make a Variable**.
 
 ## Step 2
@@ -23,7 +24,8 @@ To create a variable, click on the icon with 4 red stripes, then press **Make a 
 We want button A to be the *on* button, and button B to be the *off* button.
 This way, we can turn on the pedometer by pressing button A. Then we can press button B to turn it off.
 
-Drag the ``||input:on button A pressed||`` block and the ``||input:on button B pressed||`` block to your workspace.
+Drag two ``||input:on button A pressed||`` blocks to your workspace, and change one of the to ``||input:on button B pressed||``.
+
 ```blocks
 input.onButtonPressed(Button.A, function () {
 })
@@ -39,7 +41,7 @@ To make button A the *on* button and button B the *off* button, we need to do th
 
 Can you figure out how to do that?
 
-Hint: ``||logic:true||`` and ``||logic:false||`` are both values. You can set the value of ``||variables:on||`` by using ``||variables:set count to||``.
+Hint: ``||logic:true||`` and ``||logic:false||`` are both values that you can find in the ``||logic:Logic||`` drawer. You can set the value of ``||variables:on||`` by using ``||variables:set on to||``.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -57,11 +59,13 @@ Now, we can change the ``||variables:on||`` variable by pressing buttons A and B
 But they still aren't working as on/off buttons yet!
 You can test it by pressing button B and then pressing the white dot next to `SHAKE`. The number still increases!
 
-Don't worry. Go to the next step.
+That's because we didn't create a **condition** that uses the value of the ``||variables:on||`` variable. We'll do that next. 
 
 ## Step 5
 
 Look in the logic drawer, and drag the ``||logic:if true then||`` block onto the screen and into the ``||input:on shake||`` block.
+
+The ``||variables:change step by 1||`` should be **inside** the mouth of the **if** block. If it is not, move it there.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {

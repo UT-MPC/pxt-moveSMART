@@ -79,20 +79,22 @@ input.onGesture(Gesture.Shake, function () {
 
 Recall that the pointy thing between **if** and **then** is called a *condition*.
 The ``||logic:if true then||`` block executes the instructions in the mouth if the *condition* is true.
-Right now, because the *condition* is true, ``||variables:change step by 1||`` will always execute no matter what.
+Right now, because the *condition* is ``||logic:true||``, ``||variables:change step by 1||`` will always execute no matter what.
 
 
 ## Step 7
 
-You can replace the ``||logic:true||`` in the ``||logic:if true then||`` block with any variable that has value ``||logic:true||`` or ``||logic:false||``.
-This way, ``||variables:step||`` will increase only when the variable is true,
-and ``||variables:step||`` will stay the same when the variable is false.
+You can create your own *condition*, and replace the ``||logic:true||`` in the ``||logic:if true then||`` block with *condition*. A *condition* can be any statement or variable that has value ``||logic:true||`` or ``||logic:false||``.
 
-Can you figure out what to do with your ``||variables:on||`` variable?
+This way, ``||variables:step||`` will increase only when the *condition* is true,
+and ``||variables:step||`` will stay the same when the *condition* is false.
+
+Can you figure out how to create the *condition* with your ``||variables:on||`` variable?
+Hint: Look in the ``||logic:Logic||`` for useful blocks.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
-    if (on) {
+    if (on==true) {
         step += 1
     }
 })

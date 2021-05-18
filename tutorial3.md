@@ -14,6 +14,8 @@ basic.forever(function () {
 
 Here is the physical activity monitor you already wrote.
 
+Click **Next** to to go to the next step.
+
 ## Step 2
 
 In the menu, find the icon with four red stripes. This is where you can create variables.
@@ -29,18 +31,34 @@ You just created a variable with the **name** *step*!
 
 The **value** stored in ``||variables:step||`` starts at 0, but it can change. Because its **value** can vary, ``||variables:step||`` is called a variable.
 
+Click **Next** to to go to the next step.
+
 ## Step 4
 
 In the previous tutorial, we used the ``||moveSMART:MoveSmart||`` blocks to measure our physical activity. Now we're going to use the ``||variables:step||`` variable.
 
-Delete ``||moveSMART:show number of steps||`` from the ``||basic:forever||`` block. (But don't delete the ``||basic:forever||`` block! If you accidentally do, you can find it again in the blue ``||basic:Basic||`` drawer.)
-
-Delete ``||moveSMART:increase step count||`` from the ``||input: on shake||`` block. (But don't delete ``||input: on shake||``! If you accidentally do, you can find it again in the pink ``||input:Input||`` drawer.)
+Click **Next** to to go to the next step.
 
 ## Step 5
 
+Delete ``||moveSMART:show number of steps||`` from the ``||basic:forever||`` block. (But don't delete the ``||basic:forever||`` block! If you accidentally do, you can find it again in the blue ``||basic:Basic||`` drawer.)
+
+## Step 6
+
+Delete ``||moveSMART:increase step count||`` from the ``||input: on shake||`` block. (But don't delete ``||input: on shake||``! If you accidentally do, you can find it again in the pink ``||input:Input||`` drawer.)
+
+## Step 7
+
 Find the ``||basic:show number 0||`` block in the blue ``||basic:Basic||`` drawer.
 Drag the ``||basic:show number 0||`` into the mouth of ``||basic:forever||``.
+
+```blocks
+basic.forever(function () {
+    basic.showNumber(0)
+})
+```
+
+## Step 8
 
 Drag ``||variables: step||`` from the ``||variables:Variables||`` drawer into the bubble that shows **0** in the ``||basic:show number 0||`` block.
 Now that it says "show number step", it should display the **value** of ``||variables:step||`` on the pretend @boardname@.
@@ -53,7 +71,7 @@ basic.forever(function () {
 })
 ```
 
-## Step 6
+## Step 9
 
 If you test your program now by clicking on the white dot next to `SHAKE` on the @boardname@, the number doesn't change. Why?
 
@@ -62,7 +80,7 @@ Because we don't ever change the **value** of the *step* variable.
 We'll fix this next.
 
 
-## Step 7
+## Step 10
 
 We need to tell the program to increase (change) the ``||variables:step||`` variable by 1 when you "shake" the @boardname@.
 

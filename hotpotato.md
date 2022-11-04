@@ -93,9 +93,22 @@ Click **Next** to go to the next step and see how to do this.
 ## Step 7
 
 First, we need a ``||Input:onButtonPressed||`` block. Set the drop down to A. Inside of this block, we want to check to see 
-if it is ``||Variables:myturn||``. If so, we need to send the ``||Variables:potato||`` counter on the radio using a 
-``||Radio:sendNumber||`` block. When we send the potato, we also want to update the ``||Variables:myturn||`` variable and 
-clear the LEDs.
+if it is ``||Variables:myturn||``. We'll need an ``||Logic:if||`` block to do this. Inside the if block, we'll need to 
+check to see if ``||Variables:myturn||`` is equal to ``||Logic:true||`` (you can do this with another block inside the 
+Logic tray. Can you figure out which one?)
+
+```blocks
+input.onButtonPressed(Button.A, function(){
+    if (myturn == true) {
+        
+    }
+```
+Click **Next** to go to the next step and see what goes inside our ``||Logic:if||`` block.
+
+## Step 8
+
+If it is my turn, we need to send the ``||Variables:potato||`` counter on the radio using a ``||Radio:sendNumber||`` block. 
+When we send the potato, we also want to update the ``||Variables:myturn||`` variable and clear the LEDs.
 
 ```blocks
 input.onButtonPressed(Button.A, function(){
@@ -114,7 +127,7 @@ input.onButtonPressed(Button.A, function(){
 
 Click **Next** to go to the next step
 
-## Step 8
+## Step 9
 
 The other player needs to receive the potato. We'll do this in a ``||Radio:onReceivedNumber||`` block. When we receive a 
 number, we want to decrement it (that means subtract one from it), and check if it's 0. If it's still bigger than 0, the 
@@ -141,7 +154,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 Click **Next** to go to the next step
 
-## Step 9
+## Step 10
 
 Finally, if the counter is 0, this player has lost. You should display something to them indicating that they lost and send 
 a message back to the other player that they won. You'll need to click the + sign on the ``||Logic:if||`` block to add an 
@@ -167,7 +180,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## Step 10
+## Step 11
 
 One more step -- the winner's device needs to display something to show that they won. Use the 
 ``||Radio:onReceiveString||`` (from the ``||Radio||`` tray) and the  ``||Basic:showIcon||`` blocks for this.
@@ -177,4 +190,5 @@ radio.onReceivedString(function (receivedString) {
     basic.showIcon(IconNames.Happy)
 })
 ```
+
 

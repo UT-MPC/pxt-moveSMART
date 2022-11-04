@@ -1,5 +1,3 @@
-# Hot Potato Tutorial -- Advanced
-
 ## Step 1
 
 On your screen, you see two blue *blocks*. They say ``||Basic:on start||`` and ``||Basic:forever||``.
@@ -11,110 +9,172 @@ Click **Next** to go to the next step
 
 ## Step 2
 
-Our game will use the @boardname@ radio to pass a virtual potato back and forth. We will take turns. Before the game 
-starts, it's no one's turn. The first thing we need to do is create a myturn variable, which will be either true or false. 
-When the program starts, we want it to be false.
+In our game, you and a partner will take turns passing a virtual potato back and forth. Before the game starts, it's no 
+one's turn. The first thing we need to do is create a new ``||Variable||``, ``||variables: myturn||`` which will be either 
+true or false. When the program starts, we want it to be ``||Logic:false||``.
 
 ```blocks
-basic.onstart(function(){
-    myturn = false
-})
+myturn = false
 ```
 
 Click **Next** to go to the next step
 
 ## Step 3
 
-On the left below, you can see the set of things that you can make your @boardname@ do. The @boardname@ can do a lot, but we're hiding some from you for now. 
+We're going to send the virtual potato back and forth between two @boardname@ devices using their radios. We need to set 
+the radio up, and you and your partner need to choose the same radio channel to use. 
 
-Click **Next** to go to the next step
+You'll use the ``||Radio:setGroup||`` command from the ``||Radio||`` tray to do this. Choose the same group as your 
+partner, and try to choose something different than everyone else.
+
+```blocks
+myturn = false
+radio.setGroup(95)
+```
 
 ## Step 4
 
-The first thing we want our @boardname@ to do is to show the number of steps counted. Click on the stick figure and look at the choices. Drag the  ``||moveSMART:show timer||`` block onto the screen and place it inside the mouth of the ``||Basic:forever||`` block.
+Each time you start a new game, one player will need to "create" the potato. Anytime you simultaneously press the A and B 
+buttons, your device will create a new potato. Grab the ``||Input:on button pressed||`` block and from the ``||Input||`` 
+tray and choose "A+B" from the drop down.
 
-After you try, you can click on the blue lightbulb in the circle (over on the right) to check to see if you did it correctly.
+When you create a potato by pressing A+B, you should show a potato on your LEDs. Use the ``||Basic:show leds||`` block from 
+the ``||Basic||`` tray to do this.
 
 ```blocks
-basic.forever(function () {
-    moveSMART.showTimer()
+input.onButtonPressed(Button.AB, function () {
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        # # # # #
+        . # # # .
+        . . . . .
+        `)
 })
 ```
+
+Click **Next** to go to the next step
 
 ## Step 5
 
-Look at the picture of the @boardname@ on the left. You should see it now show "0" on the display. This is because we haven't started the timer yet. (You can delete the ``||moveSMART:show timer||`` block and the 0 will disappear. But be sure to put it back!)
+Once you've created a potato, you need to do two more things. First, you need to set a countdown. This is like the timer in 
+the other game, but instead of a timer, we can just use a number of passes. Create a ``||Variable||`` called 
+``||potato||``. Set its value to a ``||Math:random number||`` between 2 and 20.
+
+Second, the player who starts the game has the potato, so they need to set their ``||Variable:myturn||`` variable to 
+``||Logic:true||``.
+
+```blocks
+input.onButtonPressed(Button.AB, function (){
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        # # # # #
+        . # # # .
+        . . . . .
+        `)
+    potato = randint(2,20)
+    myturn = true
+})
+```
+
+Click **Next** to go to the next step
 
 ## Step 6
 
-Next, we need to figure out how to start the timer. Look at the picture on the left. The @boardname@ has two buttons: A and B (the black circles next to the A and the B in the triangle). When you press A, we'll start the timer. When you press B, we'll stop the timer.
+The player who has the potato needs to "toss" the potato to the player who doesn't have the potato. The player who doesn't 
+have the potato needs to "catch" the potato.
+
+To toss the potato, if it's our turn, we push the A ``||Button||`` and then send the ``||Variable:potato||`` counter over 
+the radio.
+
+Click **Next** to go to the next step and see how to do this.
 
 ## Step 7
 
-Click on the pink target (it says `Input` on the right). Look for the ``||input:on button A pressed||`` block. Drag it to your workspace.
+First, we need a ``||Input:onButtonPressed||`` block. Set the drop down to A. Inside of this block, we want to check to see 
+if it is ``||Variables:myturn||``. If so, we need to send the ``||Variables:potato||`` counter on the radio using a 
+``||Radio:sendNumber||`` block. When we send the potato, we also want to update the ``||Variables:myturn||`` variable and 
+clear the LEDs.
 
 ```blocks
-input.onButtonPressed(Button.A, function () {
-	
-})
+input.onButtonPressed(Button.A, function(){
+    if (myturn == true) {
+        radio.sendNumber(potato)
+        myturn = false
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+        `)
+    }
 ```
+
+Click **Next** to go to the next step
 
 ## Step 8
 
+The other player needs to receive the potato. We'll do this in a ``||Radio:onReceivedNumber||`` block. When we receive a 
+number, we want to decrement it (that means subtract one from it), and check if it's 0. If it's still bigger than 0, the 
+game is still going, so we just update the LEDs and the ``||Variables:myturn||`` variable.
 
-Now look inside the moveSMART menu for the ``||moveSMART:start timer||`` block. Drag it inside the mouth of the ``||input:on button A pressed||`` block.
+See if you can do this one on your own. You can always use the hint if you need it.
 
 ```blocks
-input.onButtonPressed(Button.A, function () {
-    moveSMART.startTimer()
+radio.onReceivedNumber(function (receivedNumber) {
+    potato = receivedNumber
+    potato += -1
+    if (potato > 0) {
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            # # # # #
+            . # # # .
+            . . . . .
+            `)
+        myturn = true
+    }
 })
 ```
+
+Click **Next** to go to the next step
 
 ## Step 9
 
-Try this one on your own first. Tell the @boardname@ to stop counting steps when you press the B button.
-
-Hint: create **another** ``||input:on button A pressed||`` block. Then look for where it says "A" and change it to "B".
-
-## Step 10
-
-Did you get it? You should have dragged the ``||input:on button A pressed||`` block to your workspace and clicked the triangle next to A. Then choose B. Then drag the ``||moveSMART:stop timer||`` block inside the mouth of the ``||input:on button B pressed||`` block.
+Finally, if the counter is 0, this player has lost. You should display something to them indicating that they lost and send 
+a message back to the other player that they won. You'll need to click the + sign on the ``||Logic:if||`` block to add an 
+else section. Then you'll want to use the ``||Basic:showIcon||`` and ``||Radio||`` ``||Radio:sendString||`` blocks.
 
 ```blocks
-input.onButtonPressed(Button.B, function () {
-    moveSMART.stopTimer()
+radio.onReceivedNumber(function (receivedNumber) {
+    potato = receivedNumber
+    potato += -1
+    if (potato > 0) {
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            # # # # #
+            . # # # .
+            . . . . .
+            `)
+        myturn = true
+    } else {
+        basic.showIcon(IconNames.Sad)
+        radio.sendString("You win!")
+    }
 })
 ```
 
-## Step 11
+## Step 10
 
-Look at the picture of the @boardname@ on your screen again. To see how the timer works, we can press the pretend buttons on the picture of the @boardname@.
+One more step -- the winner's device needs to display something to show that they won. Use the 
+``||Radio:onReceiveString||`` (from the ``||Radio||`` tray) and the  ``||Basic:showIcon||`` blocks for this.
 
-Click **Next** to go to the next step
+```blocks
+radio.onReceivedString(function (receivedString) {
+    basic.showIcon(IconNames.Happy)
+})
+```
 
-## Step 12
-
-To start counting, press the A button (the black circle next to the A in the triangle). The @boardname@ will start the timer, so you will see the number on the @boardname@ increase. To stop the timer, press the B button, and the number will stay there.
-
-When the number is bigger than 9, it doesn't fit on the small set of LEDs, so the @boardname@ will make the number scroll.
-
-Click **Next** to go to the next step
-
-## Step 13
-
-Now, we want to transfer the code onto the real @boardname@.
-Watch the video [Transferring your program to the BBC micro:bit](https://www.youtube.com/watch?v=-FZ8yTnoozY).
-
-1. Make sure your @boardname@ is connected to your computer using the USB cable.
-2. Press the ``|Download|`` on the bottom left.
-3. Click **Pair Device** (it's in a gray button).
-4. Click the purple **Pair Device** button. In the window that appears, select the @boardname@ device (It should start with "BBC micro:bit...") Click the Connect button.
-5. Now click the purple ``|Download|`` button again.
-
-You should see the lights on your @boardname@ flashing.
-
-## Step 14
-
-Press the buttons on your real @boardname@. Does it work? If you want to reset your timer to 0, press the reset button on the back of the @boardname@.
-
-Now head back into the tutorial webpage. You should still have it open in a tab in your browser.

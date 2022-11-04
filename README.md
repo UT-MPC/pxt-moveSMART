@@ -18,6 +18,22 @@ To edit this repository in MakeCode.
 * click on **Import** then click on **Import URL**
 * paste **https://github.com/UT-MPC/pxt-moveSMART** and click import
 
+## Open tutorial as project
+
+* **https://makecode.microbit.org/#tutorial:https://github.com/UT-MPC/pxt-moveSMART/tutorial**
+* **https://makecode.microbit.org/#tutorial:https://github.com/UT-MPC/pxt-moveSMART/tutorial2**
+* **https://makecode.microbit.org/#tutorial:https://github.com/UT-MPC/pxt-moveSMART/tutorial3**
+* **https://makecode.microbit.org/#tutorial:https://github.com/UT-MPC/pxt-moveSMART/tutorial4**
+* **https://makecode.microbit.org/#tutorial:https://github.com/UT-MPC/pxt-moveSMART/tutorial5**
+* **https://makecode.microbit.org/#tutorial:https://github.com/UT-MPC/pxt-moveSMART/tutorial6**
+* **https://makecode.microbit.org/#tutorial:https://github.com/UT-MPC/pxt-moveSMART/tutorial7**
+* **https://makecode.microbit.org/#tutorial:https://github.com/UT-MPC/pxt-moveSMART/hotpotato**
+
+## Deploy
+
+* Update **pxt.json** and change version number
+* Add any new tutorial files in the "files"
+* When pushing to github, make sure that the commit message, tag, and the version number in pxt.json are the same
 
 #### Metadata (used for search, rendering)
 

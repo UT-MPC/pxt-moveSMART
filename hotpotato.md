@@ -13,11 +13,11 @@ In our game, you and a partner will take turns passing a virtual potato back and
 one's turn. The first thing we need to do is create a new ``||Variable||``, ``||variables: myturn||`` which will be either 
 true or false. When the program starts, we want it to be ``||Logic:false||``.
 
+Click **Next** to go to the next step
+
 ```blocks
 myturn = false
 ```
-
-Click **Next** to go to the next step
 
 ## Step 3
 
@@ -26,6 +26,9 @@ the radio up, and you and your partner need to choose the same radio channel to 
 
 You'll use the ``||Radio:setGroup||`` command from the ``||Radio||`` tray to do this. Choose the same group as your 
 partner, and try to choose something different than everyone else.
+
+Click **Next** to go to the next step
+
 
 ```blocks
 myturn = false
@@ -41,6 +44,9 @@ tray and choose "A+B" from the drop down.
 When you create a potato by pressing A+B, you should show a potato on your LEDs. Use the ``||Basic:show leds||`` block from 
 the ``||Basic||`` tray to do this.
 
+Click **Next** to go to the next step
+
+
 ```blocks
 input.onButtonPressed(Button.AB, function () {
     basic.showLeds(`
@@ -53,8 +59,6 @@ input.onButtonPressed(Button.AB, function () {
 })
 ```
 
-Click **Next** to go to the next step
-
 ## Step 5
 
 Once you've created a potato, you need to do two more things. First, you need to set a countdown. This is like the timer in 
@@ -63,6 +67,9 @@ the other game, but instead of a timer, we can just use a number of passes. Crea
 
 Second, the player who starts the game has the potato, so they need to set their ``||Variable:myturn||`` variable to 
 ``||Logic:true||``.
+
+Click **Next** to go to the next step
+
 
 ```blocks
 input.onButtonPressed(Button.AB, function (){
@@ -77,8 +84,6 @@ input.onButtonPressed(Button.AB, function (){
     myturn = true
 })
 ```
-
-Click **Next** to go to the next step
 
 ## Step 6
 
@@ -97,18 +102,23 @@ if it is ``||Variables:myturn||``. We'll need an ``||Logic:if||`` block to do th
 check to see if ``||Variables:myturn||`` is equal to ``||Logic:true||`` (you can do this with another block inside the 
 Logic tray. Can you figure out which one?)
 
+Click **Next** to go to the next step and see what goes inside our ``||Logic:if||`` block.
+
+
 ```blocks
 input.onButtonPressed(Button.A, function(){
     if (myturn == true) {
         
     }
 ```
-Click **Next** to go to the next step and see what goes inside our ``||Logic:if||`` block.
 
 ## Step 8
 
 If it is my turn, we need to send the ``||Variables:potato||`` counter on the radio using a ``||Radio:sendNumber||`` block. 
 When we send the potato, we also want to update the ``||Variables:myturn||`` variable and clear the LEDs.
+
+Click **Next** to go to the next step
+
 
 ```blocks
 input.onButtonPressed(Button.A, function(){
@@ -125,8 +135,6 @@ input.onButtonPressed(Button.A, function(){
     }
 ```
 
-Click **Next** to go to the next step
-
 ## Step 9
 
 The other player needs to receive the potato. We'll do this in a ``||Radio:onReceivedNumber||`` block. When we receive a 
@@ -134,6 +142,9 @@ number, we want to decrement it (that means subtract one from it), and check if 
 game is still going, so we just update the LEDs and the ``||Variables:myturn||`` variable.
 
 See if you can do this one on your own. You can always use the hint if you need it.
+
+Click **Next** to go to the next step
+
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -152,13 +163,14 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-Click **Next** to go to the next step
-
 ## Step 10
 
 Finally, if the counter is 0, this player has lost. You should display something to them indicating that they lost and send 
 a message back to the other player that they won. You'll need to click the + sign on the ``||Logic:if||`` block to add an 
 else section. Then you'll want to use the ``||Basic:showIcon||`` and ``||Radio||`` ``||Radio:sendString||`` blocks.
+
+Click **Next** to go to the next step
+
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {

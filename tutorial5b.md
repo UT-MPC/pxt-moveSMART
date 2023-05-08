@@ -11,7 +11,7 @@ input.onButtonPressed(Button.B, function () {
     moveSMART.stopTimer()
 })
 input.onGesture(Gesture.Shake, function () {
-    if (moveSMART.counting) {
+    if (moveSMART.counting()) {
         moveSMART.increaseStepCount()
     }
 })
@@ -64,8 +64,8 @@ and the ``||Variables:timer||`` variable keeps track of the number of seconds th
 presses.
 
 You can already see one of the variables in our program -- look at the ``||Input:on shake||`` block. The 
-red oval says ``||Variables:counting||``. This is because, when the microbit is shaken, we first check 
-to see if our pedometer is active. Only if it is active, we increase the step count.
+purple oval says ``||Variables:counting||``. This is because, when the microbit is shaken, we first 
+check to see if our pedometer is active. Only if it is active, we increase the step count.
 
 
 ## Step 5

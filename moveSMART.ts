@@ -6,7 +6,7 @@
 namespace moveSMART {
     //variables
     let timer = 0;
-    let step = 0;
+    let steps = 0;
     let counting: Boolean = false;
     let timing: Boolean = false;
 
@@ -16,7 +16,7 @@ namespace moveSMART {
     //%block weight=3000
     export function startCounting(): void {
         counting = true
-        step = 0;
+        steps = 0;
     }
     /**
      * TODO: stop counting steps (on shake)
@@ -79,7 +79,7 @@ namespace moveSMART {
     //%block weight=1100
     //%group="Sensor Pedometer"
     export function increaseStepCount(): void {
-        step += 1
+        steps += 1
     }
 
     /**
@@ -95,7 +95,7 @@ namespace moveSMART {
      */
     //% block
     export function newStep(step: number): number {
-        return (step+1)
+        return (steps+1)
     }
 
 
@@ -105,7 +105,7 @@ namespace moveSMART {
     //% block
     export function countSteps(): void {
         if (counting) {
-                step += 1
+                steps += 1
             }
     }
 
@@ -130,7 +130,7 @@ namespace moveSMART {
     //helper functions
     input.onGesture(Gesture.Shake, function () {
         if (counting) {
-            step += 1
+            steps += 1
         }
     })
 

@@ -40,6 +40,17 @@ In this tutorial, we will add a new feature that calculates and displays your st
 
 ## Step 3
 
+In this tutorial, we rely on four ``||Variables||``. The ``||Variables:counting||`` and 
+``||Variables:timing||`` variables are always either true or false -- they are true when our pedometer 
+is active (after we press button A) and false when our pedometer is off (after we press button B).
+
+The ``||Variables:steps||`` variable keeps track of the number of steps we walk between button presses 
+and the ``||Variables:timer||`` variable keeps track of the number of seconds that pass between button 
+presses.
+
+## Step 4
+
+
 The ``||moveSMART:runningTimeSec||`` block in the ``||moveSMART||`` tray lets us keep track of the 
 number of seconds since the @boardname@ was turned on.
 

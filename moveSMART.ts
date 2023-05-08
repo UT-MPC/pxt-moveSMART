@@ -5,6 +5,7 @@
 //% groups="['Simple Pedometer', 'Sensor Pedometer', 'Radio']"
 namespace moveSMART {
     //variables
+    let timer = 0;
     let step = 0;
     let step_no_button = 0;
     let counting: Boolean = false;
@@ -57,7 +58,7 @@ namespace moveSMART {
      */
     //%block weight=1000
     export function showTimer(): void {
-        basic.showNumber(step_count())
+        basic.showNumber(timer())
         basic.pause(100)
     }
 
@@ -135,13 +136,17 @@ namespace moveSMART {
     basic.forever(function () { //step counter using only timer
         if (count_timer) {
             basic.pause(1000) //1 per second
-            step += 1
+            timer += 1
         }
     })
 
 
     function step_count(): number {
         return step
+    }
+
+    function timer(): number {
+        return timer
     }
 
 }

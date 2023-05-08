@@ -1,19 +1,21 @@
 ```template
 let counting = false
 
+basic.forever(function() {
+    moveSMART.showNumberOfSteps()
+})
 input.onButtonPressed(Button.A, function () {
     moveSMART.startCounting()
+    moveSMART.startTimer()
 })
 input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()
+    moveSMART.stopTimer()
 })
 input.onGesture(Gesture.Shake, function () {
     if (counting) {
         moveSMART.increaseStepCount()
     }
-})
-basic.forever(function () {
-    moveSMART.showNumberOfSteps()
 })
 ```
 
@@ -38,9 +40,13 @@ In this tutorial, we will add a new feature that calculates your step rate.
 
 ## Step 3
 
-The ``||moveSMART:runningTimeSec||`` block shows the number of seconds elapsed since the @boardname@ was turned on.
-So if we compare the ``||moveSMART:runningTimeSec||`` when button A is pressed and the ``||moveSMART:runningTimeSec||`` when button B is pressed,
-we can know how much time passed between these two buttons are pushed.
+The ``||moveSMART:runningTimeSec||`` block in the ``||moveSMART||`` tray lets us keep track of the 
+number of seconds since the @boardname@ was turned on.
+
+We can use the ``||moveSMART:runningTimeSec||`` to figure out how much time passes between when we start 
+counting steps and when we stop counting steps. If we *subtract* the ``||moveSMART:runningTimeSec||`` 
+when we push button A (the start time) from ``||moveSMART:runningTimeSec||`` when we push button B (the 
+end time), the result will be the number of seconds that we were counting steps.
 
 ## Step 4
 

@@ -2,18 +2,18 @@
 let counting = false
 let step = 0
 input.onButtonPressed(Button.A, function () {
-    moveSmart.startCounting()
+    moveSMART.startCounting()
 })
 input.onButtonPressed(Button.B, function () {
-    moveSmart.stopCounting()
+    moveSMART.stopCounting()
 })
 input.onGesture(Gesture.Shake, function () {
     if (counting) {
-        moveSmart.increaseStepCount()
+        moveSMART.increaseStepCount()
     }
 })
 basic.forever(function () {
-    moveSmart.showNumberOfSteps()
+    moveSMART.showNumberOfSteps()
 })
 ```
 

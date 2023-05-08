@@ -1,6 +1,4 @@
 ```template
-let counting = false
-
 basic.forever(function() {
     moveSMART.showNumberOfSteps()
 })
@@ -49,6 +47,19 @@ and the ``||Variables:timer||`` variable keeps track of the number of seconds th
 presses.
 
 ## Step 4
+
+Our step rate is the number of steps we take per minute. If we are walking, we usually take  more than 
+60 steps per minute. If we're running, we usually take more than 100 steps per minute.
+
+To *compute* our step rate, we need to convert our timer's seconds into minutes (or fractions of a 
+minute). Let's say we walked 10 steps in 5 seconds. Then we walked 10/5 = 2 steps per second. Since 
+there are 60 seconds in a minute, we could walk 2 x 60 = 120 steps per minute.
+
+So we take the number of steps our pedometer counts, divide it by the number of second our timer counts. 
+This gives us how many steps we walk per second. To get how many steps we walk per *minute*, we just 
+multiply by 60.
+
+## Step 5
 
 
 The ``||moveSMART:runningTimeSec||`` block in the ``||moveSMART||`` tray lets us keep track of the 

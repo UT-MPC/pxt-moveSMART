@@ -19,7 +19,7 @@ input.onGesture(Gesture.Shake, function () {
 })
 ```
 
-# ProjectSMART Pedometer Tutorial -- Level 5
+# ProjectSMART Pedometer Tutorial -- Counting and Timing
 # Learning about Rate
 
 ## Step 1
@@ -31,12 +31,12 @@ at what this program does.
 
 ## Step 2
 
-In the ``||Basic::forever||`` block, we make sure to show our step count all of the time. In the 
-``||Input:on Button A pressed||`` block, we tell our step counter to start counting steps. In the 
-``||Input:on Button B pressed||`` block, we tell our step counter to stop counting steps. And in the 
-``||Input:on shake||`` block, we add a step to our step count.
+In the ``||Basic:forever||`` block, we make sure to show our step count all of the time. In the 
+``||Input:on Button A pressed||`` block, we tell our step counter to start counting steps and counting 
+time. In the ``||Input:on Button B pressed||`` block, we tell our step counter to stop counting steps 
+and stop counting time. And in the ``||Input:on shake||`` block, we add a step to our step count.
 
-In this tutorial, we will add a new feature that calculates your step rate.
+In this tutorial, we will add a new feature that calculates and displays your step rate.
 
 ## Step 3
 

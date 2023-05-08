@@ -7,9 +7,8 @@ namespace moveSMART {
     //variables
     let timer = 0;
     let step = 0;
-    let step_no_button = 0;
     let counting: Boolean = false;
-    let count_timer: Boolean = false;
+    let timing: Boolean = false;
 
     /**
      * TODO: start counting steps (on shake)
@@ -17,6 +16,7 @@ namespace moveSMART {
     //%block weight=3000
     export function startCounting(): void {
         counting = true
+        step = 0;
     }
     /**
      * TODO: stop counting steps (on shake)
@@ -32,7 +32,8 @@ namespace moveSMART {
     //%block weight = 500
     //%group="Simple Pedometer"
     export function startTimer(): void {
-        count_timer = true
+        timing = true
+        timer = 0
     }
 
     /**
@@ -41,7 +42,7 @@ namespace moveSMART {
     //%block weight = 550
     //%group="Simple Pedometer"
     export function stopTimer(): void {
-        count_timer = false
+        timing = false
     }
 
     /**
@@ -49,7 +50,7 @@ namespace moveSMART {
      */
     //%block weight=1000
     export function showStepCount(): void {
-        basic.showNumber(step_count())
+        basic.showNumber(step)
         basic.pause(100)
     }
 
@@ -68,7 +69,7 @@ namespace moveSMART {
     //%block weight=1050
     //%group="Sensor Pedometer"
     export function showNumberOfSteps(): void {
-        basic.showNumber(step_no_button)
+        basic.showNumber(step)
         basic.pause(100)
     }
 
@@ -78,7 +79,7 @@ namespace moveSMART {
     //%block weight=1100
     //%group="Sensor Pedometer"
     export function increaseStepCount(): void {
-        step_no_button += 1
+        step += 1
     }
 
     /**
@@ -134,15 +135,10 @@ namespace moveSMART {
     })
 
     basic.forever(function () { //step counter using only timer
-        if (count_timer) {
+        if (timing) {
             basic.pause(1000) //1 per second
             timer += 1
         }
     })
-
-
-    function step_count(): number {
-        return step
-    }
 
 }

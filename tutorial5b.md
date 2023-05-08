@@ -1,6 +1,6 @@
 ```template
 let counting = false
-let step = 0
+
 input.onButtonPressed(Button.A, function () {
     moveSMART.startCounting()
 })
@@ -22,16 +22,27 @@ basic.forever(function () {
 
 ## Step 1
 
-On your screen you see the physical activity sensor we built in the last tutorial.
-In this tutorial, we will add a new feature that calculates your step rate.
+On your screen you see a simple physical activity sensor that can be controlled with a button. This 
+combines what we learned with our timer and what we learned with our step count. Let's take a quick look 
+at what this program does.
+
 
 ## Step 2
+
+In the ``||Basic::forever||`` block, we make sure to show our step count all of the time. In the 
+``||Input:on Button A pressed||`` block, we tell our step counter to start counting steps. In the 
+``||Input:on Button B pressed||`` block, we tell our step counter to stop counting steps. And in the 
+``||Input:on shake||`` block, we add a step to our step count.
+
+In this tutorial, we will add a new feature that calculates your step rate.
+
+## Step 3
 
 The ``||moveSMART:runningTimeSec||`` block shows the number of seconds elapsed since the @boardname@ was turned on.
 So if we compare the ``||moveSMART:runningTimeSec||`` when button A is pressed and the ``||moveSMART:runningTimeSec||`` when button B is pressed,
 we can know how much time passed between these two buttons are pushed.
 
-## Step 3
+## Step 4
 
 We want to know what time button A is pushed, and what time button B is pushed.
 So let's create two variables: ``||variables: startTime||`` and ``||variables: endTime||``.
@@ -48,7 +59,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Step 4
+## Step 5
 
 Next, when button B is pushed, we want to store the value of ``||input:runningTime (ms)||`` in the variable
 ``||variables: endTime||``.
@@ -63,7 +74,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 5
+## Step 6
 
 Next, let's get the number of seconds between pressing button A and button B.
 How do we get the number of seconds elapsed with your ``||variables: startTime||`` and ``||variables: endTime||`` variables?
@@ -76,7 +87,7 @@ totalTime = endTime - startTime
 ```
 Ignore the ``||basic:on start||`` block.
 
-## Step 6
+## Step 7
 
 Can you figure out where to put the ``||variables:set totalTime to endTime - startTime||`` block?
 
@@ -88,13 +99,13 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 7
+## Step 8
 
 Now we have the number of seconds stored in ``||variables: totalTime||``.
 We can divide the number of steps by ``||variables: totalTime||``, and we'll get the number of steps per second.
 Then we can just multiply it by 60 to get the number of steps per minute, which is your step rate.
 
-## Step 8
+## Step 9
 
 Let's do this math when you press button B.
 First, create another variable, and call it ``||variables: rate||``.
@@ -111,7 +122,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 9
+## Step 10
 
 Let's also restart your step count when you press button B,
 so that when you press on button A the next time, you can get a new step count and a new rate.
@@ -126,7 +137,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 10
+## Step 11
 
 Finally, let's show the rate on the @boardname@.
 So instead of showing the number of steps at all time, let's show ``||variables: rate||`` when we're not counting.
@@ -146,7 +157,7 @@ basic.forever(function () {
 })
 ```
 
-## Step 11
+## Step 12
 
 Now we have a physical activity sensor that also shows your step rate!
 You can now flash your code into your real @boardname@.

@@ -6,9 +6,11 @@ basic.forever(function() {
 })
 input.onButtonPressed(Button.A, function () {
     moveSMART.startCounting()
+    moveSMART.startTimer()
 })
 input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()
+    moveSMART.stopTimer()
 })
 input.onGesture(Gesture.Shake, function () {
     if (counting) {

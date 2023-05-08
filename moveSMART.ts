@@ -5,6 +5,7 @@
 //% groups="['Simple Pedometer', 'Sensor Pedometer', 'Radio']"
 namespace moveSMART {
     //variables
+    let timer = 0;
     let step = 0;
     let step_no_button = 0;
     let counting: Boolean = false;

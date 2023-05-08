@@ -31,7 +31,7 @@ namespace moveSMART {
      */
     //%block weight = 500
     //%group="Simple Pedometer"
-    export function startTimer(): void {
+    export function startTiming(): void {
         timing = true
         timer = 0
     }

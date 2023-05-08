@@ -4,7 +4,7 @@ basic.forever(function() {
 })
 input.onButtonPressed(Button.A, function () {
     moveSMART.startCounting()
-    moveSMART.startTimer()
+    moveSMART.startTiming()
 })
 input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()

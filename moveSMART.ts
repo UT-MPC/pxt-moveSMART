@@ -50,7 +50,7 @@ namespace moveSMART {
      */
     //%block weight=1000
     export function showStepCount(): void {
-        basic.showNumber(step)
+        basic.showNumber(steps)
         basic.pause(100)
     }
 
@@ -69,7 +69,7 @@ namespace moveSMART {
     //%block weight=1050
     //%group="Sensor Pedometer"
     export function showNumberOfSteps(): void {
-        basic.showNumber(step)
+        basic.showNumber(steps)
         basic.pause(100)
     }
 
@@ -94,7 +94,7 @@ namespace moveSMART {
      * TODO: return new step count
      */
     //% block
-    export function newStep(step: number): number {
+    export function newStep(steps: number): number {
         return (steps+1)
     }
 

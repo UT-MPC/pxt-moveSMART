@@ -11,7 +11,7 @@ input.onButtonPressed(Button.B, function () {
     moveSMART.stopTimer()
 })
 input.onGesture(Gesture.Shake, function () {
-    if (counting) {
+    if (moveSMART.counting) {
         moveSMART.increaseStepCount()
     }
 })

@@ -11,6 +11,14 @@ namespace moveSMART {
     let timing: Boolean = false;
 
     /**
+     * TODO: seturn counting
+     */
+    //%block weight=3000
+    export function counting(): Boolean {
+        return counting
+    }
+
+    /**
      * TODO: start counting steps (on shake)
      */
     //%block weight=3000

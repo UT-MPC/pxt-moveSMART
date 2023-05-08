@@ -36,17 +36,8 @@ and stop counting time. And in the ``||Input:on shake||`` block, we add a step t
 
 In this tutorial, we will add a new feature that calculates and displays your step rate.
 
+
 ## Step 3
-
-In this tutorial, we rely on four ``||Variables||``. The ``||Variables:counting||`` and 
-``||Variables:timing||`` variables are always either true or false -- they are true when our pedometer 
-is active (after we press button A) and false when our pedometer is off (after we press button B).
-
-The ``||Variables:steps||`` variable keeps track of the number of steps we walk between button presses 
-and the ``||Variables:timer||`` variable keeps track of the number of seconds that pass between button 
-presses.
-
-## Step 4
 
 Our step rate is the number of steps we take per minute. If we are walking, we usually take  more than 
 60 steps per minute. If we're running, we usually take more than 100 steps per minute.
@@ -59,73 +50,38 @@ So we take the number of steps our pedometer counts, divide it by the number of 
 This gives us how many steps we walk per second. To get how many steps we walk per *minute*, we just 
 multiply by 60.
 
-## Step 5
-
-
-The ``||moveSMART:runningTimeSec||`` block in the ``||moveSMART||`` tray lets us keep track of the 
-number of seconds since the @boardname@ was turned on.
-
-We can use the ``||moveSMART:runningTimeSec||`` to figure out how much time passes between when we start 
-counting steps and when we stop counting steps. If we *subtract* the ``||moveSMART:runningTimeSec||`` 
-when we push button A (the start time) from ``||moveSMART:runningTimeSec||`` when we push button B (the 
-end time), the result will be the number of seconds that we were counting steps.
 
 ## Step 4
+  
+In programming, ``||Variables||`` help us keep track of data our program needs to run.
 
-We want to know what time button A is pushed, and what time button B is pushed.
-So let's create two variables: ``||variables: startTime||`` and ``||variables: endTime||``.
-When button A is pushed, we want to store the value of ``||moveSMART:runningTimeSec||`` in the variable
-``||variables: startTime||``.
+In this tutorial, we use on four ``||Variables||``. The ``||Variables:counting||`` and
+``||Variables:timing||`` variables are always either true or false -- they are true when our pedometer
+is active (after we press button A) and false when our pedometer is off (after we press button B).
 
-For example, if you press button A five seconds after turning on the @boardname@,
-then ``||moveSMART:runningTimeSec||`` will be 5.
+The ``||Variables:steps||`` variable keeps track of the number of steps we walk between button presses
+and the ``||Variables:timer||`` variable keeps track of the number of seconds that pass between button
+presses.
 
-```blocks
-input.onButtonPressed(Button.A, function () {
-    counting = true
-    startTime = moveSMART.runningTimeSec()
-})
-```
+You can already see one of the variables in our program -- look at the ``||Input:on shake||`` block. The 
+red oval says ``||Variables:counting||``. This is because, when the microbit is shaken, we first check 
+to see if our pedometer is active. Only if it is active, we increase the step count.
+
 
 ## Step 5
 
-Next, when button B is pushed, we want to store the value of ``||input:runningTime (ms)||`` in the variable
-``||variables: endTime||``.
-
-For example, if you press button B nine seconds after turning on the @boardname@,
-then ``||moveSMART:runningTimeSec||`` will be 9.
+When we press button B to stop our pedometer, we want to compute our step rate and show it on the 
+microbit. We'll need a ``||Basic:show number||`` block at the end of the ``||Input:on button B 
+pressed||`` block (after the ``||moveSMART:stop timer||``). 
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
-    counting = false
-    endTime = input.runningTime()
+    moveSMART.stopCounting()
+    moveSMART.stoptiming()
+    Basic.showNumber(0)
 })
 ```
 
-## Step 6
-
-Next, let's get the number of seconds between pressing button A and button B.
-How do we get the number of seconds elapsed with your ``||variables: startTime||`` and ``||variables: endTime||`` variables?
-
-We can get it by subtracting ``||variables: endTime||`` with ``||variables: startTime||``, 
-and store it in a new variable called ``||variables: totalTime||``.
-
-```blocks
-totalTime = endTime - startTime
-```
-Ignore the ``||basic:on start||`` block.
-
-## Step 7
-
-Can you figure out where to put the ``||variables:set totalTime to endTime - startTime||`` block?
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-    counting = false
-    endTime = moveSMART.runningTimeSec()
-    totalTime = endTime - startTime
-})
-```
 
 ## Step 8
 

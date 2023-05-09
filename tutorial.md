@@ -60,11 +60,12 @@ input.onButtonPressed(Button.A, function () {
 
 ## Step 10
 
-Now look inside the moveSMART menu for the ``||moveSMART:start timer||`` block. Drag it inside the mouth of the ``||input:on button A pressed||`` block.
+Now look inside the moveSMART menu for the ``||moveSMART:start timing||`` block. Drag it inside the 
+mouth of the ``||input:on button A pressed||`` block.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
-    moveSMART.startTimer()
+    moveSMART.startTiming()
 })
 ```
 
@@ -80,7 +81,7 @@ Did you get it? You should have dragged the ``||input:on button A pressed||`` bl
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
-    moveSMART.stopTimer()
+    moveSMART.stopTiming()
 })
 ```
 

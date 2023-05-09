@@ -15,7 +15,8 @@ basic.forever(function () {
 
 What you created in the previous tutorial is shown on the screen. In this tutorial, we will give it on/off buttons.
 
-Our new program will have **two** variable. So, first, create a second variable (you can name it **on**) that we will use to tell the program if the pedometer should be counting steps or not.
+Our new program will have **two** variables. So, first, create a second variable (you can name it 
+**on**) that we will use to tell the program if the pedometer should be counting steps or not.
 
 To create a variable, click on the icon with 4 red stripes, then press **Make a Variable**.
 

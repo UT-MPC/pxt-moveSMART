@@ -45,7 +45,8 @@ The ``||input:on shake||`` block provides the program with a list of things to d
 When the @boardname@ is shaken, we want to increase the step count.
 
 Can you figure out how to do that with the ``||input:on shake||`` block?
-Hint: There's a block in the **moveSMART** menu called ``||moveSMART:increase step count||``. This block increases the number shown on the @boardname@ by one.
+Hint: There's a block in the ``||MoveSMART||`` menu called ``||moveSMART:increase step count||``. This 
+block increases the number shown on the @boardname@ by one.
 
 ```block
 input.onGesture(Gesture.Shake, function () {

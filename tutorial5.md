@@ -1,8 +1,10 @@
 ```template
 let counting = false
 let step = 0
+let startTime = 0
 input.onButtonPressed(Button.A, function () {
     counting = true
+    startTime = moveSMART.runningTimeSec()
 })
 input.onButtonPressed(Button.B, function () {
     counting = false

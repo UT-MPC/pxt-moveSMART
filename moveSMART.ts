@@ -5,8 +5,8 @@
 //% groups="['Simple Pedometer', 'Sensor Pedometer', 'Radio']"
 namespace moveSMART {
     //variables
-    let timer = 0;
-    let steps = 0;
+    let _timer = 0;
+    let _steps = 0;
     let isCounting : Boolean = false;
     let timing: Boolean = false;
 
@@ -16,7 +16,7 @@ namespace moveSMART {
     //%block weight=3000
     export function startCounting(): void {
         isCounting = true
-        steps = 0
+        _steps = 0
     }
     /**
      * TODO: stop counting steps (on shake)
@@ -33,7 +33,7 @@ namespace moveSMART {
     //%group="Simple Pedometer"
     export function startTiming(): void {
         timing = true
-        timer = 0
+        _timer = 0
     }
     /**
      * TODO: stop counting steps (using timer)
@@ -50,7 +50,7 @@ namespace moveSMART {
      */
     //%block weight=1000
     export function showTimer(): void {
-        basic.showNumber(timer)
+        basic.showNumber(_timer)
         basic.pause(100)
     }
 
@@ -60,7 +60,7 @@ namespace moveSMART {
     //%block weight=1050
     //%group="Sensor Pedometer"
     export function showNumberOfSteps(): void {
-        basic.showNumber(steps)
+        basic.showNumber(_steps)
         basic.pause(100)
     }
         
@@ -70,7 +70,7 @@ namespace moveSMART {
     //%block weight=1100
     //%group="Sensor Pedometer"
     export function increaseStepCount(): void {
-        steps += 1
+        _steps += 1
     }
 
     /**
@@ -87,7 +87,7 @@ namespace moveSMART {
     //%block weight=600 
     export function countsteps(): void {
         if(isCounting){
-            steps += 1
+            _steps += 1
         }
     }
     
@@ -108,12 +108,20 @@ namespace moveSMART {
         radio.setGroup(1)
         radio.sendValue(name, activeness)
     }
+
+    export function steps(): number {
+        return _steps
+    }
+
+    export function timer(): number{
+        return _timer
+    }
      
 
     basic.forever(function () { //step counter using only timer
         if (timing) {
             basic.pause(1000) //1 per second
-            timer += 1   
+            _timer += 1   
         }
     })
      

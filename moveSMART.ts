@@ -3,7 +3,6 @@
  */
 //% weight=100 color=#08415d icon="\uf1ae"
 //% groups="['Simple Pedometer', 'Sensor Pedometer', 'Radio']"
-
 namespace moveSMART {
     //variables
     let timer = 0;

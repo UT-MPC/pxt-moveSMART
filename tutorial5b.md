@@ -55,7 +55,7 @@ multiply by 60.
   
 In programming, ``||Variables||`` help us keep track of data our program needs to run.
 
-In this tutorial, we use on four ``||Variables||``. The ``||moveSMART:counting||`` and
+In this program, we already have four ``||Variables||``. The ``||moveSMART:counting||`` and
 ``||moveSMART:timing||`` variables are always either true or false -- they are true when our pedometer
 is active (after we press button A) and false when our pedometer is off (after we press button B).
 
@@ -63,11 +63,14 @@ The ``||moveSMART:steps||`` variable keeps track of the number of steps we walk 
 and the ``||moveSMART:timer||`` variable keeps track of the number of seconds that pass between button
 presses.
 
-You can already see one of the variables in our program -- look at the ``||Input:on shake||`` block. The 
+You can see one of the variables in our program -- look at the ``||Input:on shake||`` block. The 
 purple oval says ``||moveSMART:counting||``. This is because, when the microbit is shaken, we first 
 check to see if our pedometer is active. Only if it is active, we increase the step count.
 
 
 ## Step 5
 
-Done!
+Our next step is to compute our step rate. We will need to store the rate that we compute in another 
+variable, which we'll have to make ourselves. Select the ``||Variables||`` tray and click "Make a 
+variable". For the variable's name, type "rate" in the box that appears. Press OK. Now you'll see new 
+red blocks have been created that allow you to do thing with your new ``||Variables:rate||`` variable.

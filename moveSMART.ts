@@ -7,8 +7,8 @@ namespace moveSMART {
     //variables
     let _timer = 0;
     let _steps = 0;
-    let isCounting : Boolean = false;
-    let timing: Boolean = false;
+    let isCounting : boolean = false;
+    let timing: boolean = false;
 
     /**
      * TODO: start counting steps (on shake)
@@ -77,7 +77,7 @@ namespace moveSMART {
      * TODO: show whether the step counter is counting
      */
     //%block weight=500
-    export function counting(): Boolean {
+    export function counting(): boolean {
         return isCounting
     }
 

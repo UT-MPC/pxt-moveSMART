@@ -8,7 +8,7 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()
-    moveSMART.stopTimer()
+    moveSMART.stopTiming()
 })
 input.onGesture(Gesture.Shake, function () {
     if (moveSMART.counting()) {

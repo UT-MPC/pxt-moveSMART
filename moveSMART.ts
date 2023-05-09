@@ -35,17 +35,8 @@ namespace moveSMART {
      */
     //%block weight = 550
     //%group="Simple Pedometer"
-    export function stopTimer(): void {
+    export function stopTiming(): void {
         timing = false
-    }
-    
-    /**
-     * TODO: show number of steps
-     */
-    //%block weight=1000
-    export function showStepCount(): void {
-        basic.showNumber(steps)
-        basic.pause(100) 
     }
     
     /**
@@ -74,33 +65,26 @@ namespace moveSMART {
     export function increaseStepCount(): void {
         steps += 1
     }
+
     /**
      * TODO: show whether the step counter is counting
      */
-    //%block
+    //%block weight=500
     export function counting(): Boolean {
         return isCounting
     }
-    
+
     /**
-     * TODO: return new step count
+     * TODO: show whether the step counter is counting
      */
-    //% block
-    export function newStep(steps: number): number {
-        return (steps+1)
-    }
-       
-    
-    /**
-     * TODO: continue increasing steps if user has pressed "Start Counting"
-     */
-    //% block
-    export function countSteps(): void {
-        if (isCounting) {
-                steps += 1
-            }
+    //%block weight=600 
+    export function countsteps(): void {
+        if(isCounting){
+            steps += 1
+        }
     }
     
+
     /**
      * TODO: send activeness
      */
@@ -111,21 +95,7 @@ namespace moveSMART {
         radio.sendValue(name, activeness)
     }
      
-    /**
-     * TODO: gets the number of seconds elapsed since power on
-     */
-    //% block
-    export function runningTimeSec(): number {
-        return Math.floor(input.runningTime()/1000)
-    }
-        
-    //helper functions
-    input.onGesture(Gesture.Shake, function () {
-       if (isCounting) {
-            steps += 1
-        }
-    })
-       
+
     basic.forever(function () { //step counter using only timer
         if (timing) {
             basic.pause(1000) //1 per second

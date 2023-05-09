@@ -56,7 +56,7 @@ multiply by 60.
 In programming, ``||Variables||`` help us keep track of data our program needs to run.
 
 In this tutorial, we use on four ``||Variables||``. The ``||moveSMART:counting||`` and
-``||moveSMAT:timing||`` variables are always either true or false -- they are true when our pedometer
+``||moveSMART:timing||`` variables are always either true or false -- they are true when our pedometer
 is active (after we press button A) and false when our pedometer is off (after we press button B).
 
 The ``||moveSMART:steps||`` variable keeps track of the number of steps we walk between button presses
@@ -72,28 +72,28 @@ check to see if our pedometer is active. Only if it is active, we increase the s
 
 When we press button B to stop our pedometer, we want to compute our step rate and show it on the 
 microbit. We'll need a ``||Basic:show number||`` block at the end of the ``||Input:on button B 
-pressed||`` block (after the ``||moveSMART:stop timer||``). 
+pressed||`` block (after the ``||moveSMART:stop timing||``). 
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()
     moveSMART.stoptiming()
-    moveSMART.counting()
     Basic.showNumber(0)
 })
 ```
 
 
-## Step 8
+## Step 6
 
-Now we have the number of seconds stored in ``||variables: totalTime||``.
-We can divide the number of steps by ``||variables: totalTime||``, and we'll get the number of steps per second.
-Then we can just multiply it by 60 to get the number of steps per minute, which is your step rate.
-
-## Step 9
+Now we need to divide the number of steps by the number of seconds then multiply by 60 to get the number 
+of steps per minute.
 
 Let's do this math when you press button B.
-First, create another variable, and call it ``||variables: rate||``.
+First, we will create a new ``||Variable||`` and call it ``||Variables: rate||``. To do this, select the 
+``||Variables||`` tray on the left and choose *Make a variable*. In the box that appears, for the new 
+variable's name, type "rate". The select "OK".
+
+## Step 7
 
 In the ``||math: math||`` tray you will find blocks for subtraction and division.
 You can use them to set ``||variables: rate||``'s value.

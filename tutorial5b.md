@@ -71,13 +71,13 @@ check to see if our pedometer is active. Only if it is active, we increase the s
 ## Step 5
 
 When we press button B to stop our pedometer, we want to compute our step rate and show it on the 
-microbit. We'll need a Basic:show number block at the end of the Input:on button B 
-pressed block (after the moveSMART:stop timing). 
+microbit. We'll need a ``||basic:show number||``  block at the end of the ``||Input:on button B 
+pressed||`` block (after the ``||moveSMART:stop timing||``). 
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()
     moveSMART.stoptiming()
-    Basic.showNumber(0)
+    basic.showNumber(0)
 })
 ```

@@ -43,6 +43,7 @@ namespace moveSMART {
     export function stopTiming(): void {
         timing = false
     }
+
     
     /**
      * TODO: show timer
@@ -52,6 +53,7 @@ namespace moveSMART {
         basic.showNumber(timer)
         basic.pause(100)
     }
+
     /**
      * TODO: show the number of steps for the step counter (using sensors) without buttons
      */
@@ -89,6 +91,13 @@ namespace moveSMART {
         }
     }
     
+    /**
+     * TODO: gets the number of seconds elapsed since power on
+     */
+    //% block
+    export function runningTimeSec(): number {
+        return Math.floor(input.runningTime()/1000)
+    }
 
     /**
      * TODO: send activeness

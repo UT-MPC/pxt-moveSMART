@@ -78,6 +78,7 @@ pressed||`` block (after the ``||moveSMART:stop timer||``).
 input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()
     moveSMART.stoptiming()
+    moveSMART.counting()
     Basic.showNumber(0)
 })
 ```

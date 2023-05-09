@@ -1,7 +1,7 @@
 ```template
+let counting = false
 basic.forever(function() {
     moveSMART.showNumberOfSteps()
-    counting = moveSMART.counting()
 })
 input.onButtonPressed(Button.A, function () {
     moveSMART.startCounting()
@@ -12,6 +12,7 @@ input.onButtonPressed(Button.B, function () {
     moveSMART.stopTiming()
 })
 input.onGesture(Gesture.Shake, function () {
+    counting = moveSMART.counting()
     if (moveSMART.counting()) {
         moveSMART.increaseStepCount()
     }

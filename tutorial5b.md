@@ -71,8 +71,8 @@ check to see if our pedometer is active. Only if it is active, we increase the s
 ## Step 5
 
 When we press button B to stop our pedometer, we want to compute our step rate and show it on the 
-microbit. We'll need a ``||Basic:show number||`` block at the end of the ``||Input:on button B 
-pressed||`` block (after the ``||moveSMART:stop timing||``). 
+microbit. We'll need a Basic:show number block at the end of the Input:on button B 
+pressed block (after the moveSMART:stop timing). 
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
@@ -81,71 +81,3 @@ input.onButtonPressed(Button.B, function () {
     Basic.showNumber(0)
 })
 ```
-
-
-## Step 6
-
-Now we need to divide the number of steps by the number of seconds then multiply by 60 to get the number 
-of steps per minute.
-
-Let's do this math when you press button B.
-First, we will create a new ``||Variable||`` and call it ``||Variables: rate||``. To do this, select the 
-``||Variables||`` tray on the left and choose *Make a variable*. In the box that appears, for the new 
-variable's name, type "rate". The select "OK".
-
-## Step 7
-
-In the ``||math: math||`` tray you will find blocks for subtraction and division.
-You can use them to set ``||variables: rate||``'s value.
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-    counting = false
-    endTime = moveSMART.runningTimeSec()
-    totalTime = endTime - startTime
-    rate = step / totalTime * 60
-})
-```
-
-## Step 10
-
-Let's also restart your step count when you press button B,
-so that when you press on button A the next time, you can get a new step count and a new rate.
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-    counting = false
-    endTime = moveSMART.runningTimeSec()
-    totalTime = endTime - startTime
-    rate = step / totalTime * 60
-    step = 0
-})
-```
-
-## Step 11
-
-Finally, let's show the rate on the @boardname@.
-So instead of showing the number of steps at all time, let's show ``||variables: rate||`` when we're not counting.
-
-Do you remember what the ``||logic: if...then...else||`` block does?
-Can you figure out what to do?
-
-Hint: look in the ``||logic: logic||`` tray.
-
-```block
-basic.forever(function () {
-    if (counting) {
-        basic.showNumber(step)
-    } else {
-        basic.showNumber(rate)
-    }
-})
-```
-
-## Step 12
-
-Now we have a physical activity sensor that also shows your step rate!
-You can now flash your code into your real @boardname@.
-
-Press the ``|Download|`` on the bottom left of your screen.
-You should see the lights on your real @boardname@ flashing.

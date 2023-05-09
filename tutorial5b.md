@@ -10,6 +10,7 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()
     moveSMART.stopTiming()
+    basic.show(moveSMART.steps() + moveSMART.timer())
 })
 input.onGesture(Gesture.Shake, function () {
     counting = moveSMART.counting()

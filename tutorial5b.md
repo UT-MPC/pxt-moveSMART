@@ -95,3 +95,20 @@ input.onButtonPressed(Button.B, function () {
     rate = moveSMART.steps() / moveSMART.timer() * 60
 })
 ```
+
+## Step 7
+
+While we are exercising, we want our pedometer to show our step count. It already does this. When we are 
+done exercising, we want our pedometer to show what our step rate was for our previous exercise. 
+
+We need to update our ``||basic:forever||`` block to do this. First, we need a ``||Logic:if||`` block 
+from the ``||Logic||`` tray. We want to put it inside the ``||basic:forever||`` block so that the 
+``||moveSMART:show steps||`` is inside of the if.
+
+```blocks
+basic.forever(function (){
+    if(true) {
+        moveSMART.showSteps()
+    }
+})
+```

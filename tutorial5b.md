@@ -75,3 +75,21 @@ Our next step is to compute our step rate. We will need to store the rate that w
 variable, which we'll have to make ourselves. Select the ``||Variables||`` tray and click "Make a 
 variable". For the variable's name, type "rate" in the box that appears. Press OK. Now you'll see new 
 red blocks have been created that allow you to do things with your new ``||Variables:rate||`` variable.
+
+## Step 6
+
+Now to figure out the rate, we need to divide the number of steps by the number of seconds. Then we need 
+to multiply by 60 to get the number of steps per minute.
+
+Let's do this math when you press button B.
+
+In the ``||math: math||`` tray you will find blocks for subtraction and division.
+You can use them to set ``||variables: rate||``'s value.
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    moveSMART.stopCounting()
+    moveSMART.stopTiming()
+    rate = moveSMART.steps() / moveSMART.timer() * 60
+})
+```

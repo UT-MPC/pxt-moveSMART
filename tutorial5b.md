@@ -1,6 +1,7 @@
 ```template
 basic.forever(function() {
     moveSMART.showNumberOfSteps()
+    counting = moveSMART.counting()
 })
 input.onButtonPressed(Button.A, function () {
     moveSMART.startCounting()
@@ -73,4 +74,4 @@ check to see if our pedometer is active. Only if it is active, we increase the s
 Our next step is to compute our step rate. We will need to store the rate that we compute in another 
 variable, which we'll have to make ourselves. Select the ``||Variables||`` tray and click "Make a 
 variable". For the variable's name, type "rate" in the box that appears. Press OK. Now you'll see new 
-red blocks have been created that allow you to do thing with your new ``||Variables:rate||`` variable.
+red blocks have been created that allow you to do things with your new ``||Variables:rate||`` variable.

@@ -9,7 +9,6 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()
     moveSMART.stopTiming()
-    basic.showNumber(moveSMART.steps() + moveSMART.timer())
 })
 input.onGesture(Gesture.Shake, function () {
     if (moveSMART.counting()) {
@@ -149,3 +148,37 @@ basic.forever(function (){
     }
 })
 ```
+
+## Step 10
+
+Instead of the ``||Logic:true||`` value, we want to ``||moveSMART:show steps||`` whenever our pedometer 
+is ``||moveSMART:counting||``. 
+
+Replace ``||Logic:true||`` with ``||moveSMART:counting||`` from the ``||moveSMART||`` tray.
+
+```blocks
+basic.forever(function (){
+    if(moveSMART.counting()) {
+        moveSMART.showSteps()
+    }
+})
+```
+
+## Step 11
+
+Now we need to display ``||variables:rate||`` whenever we are *not* ``||moveSMART:counting||``. 
+
+Touch the + sign at the bottom of the ``||Logic:if||`` block. The word ``||Logic:else||`` appears.
+
+Tell your microbit to ``||basic:show||`` the ``||variables:rate||`` whenever it is not 
+``||moveSMART:counting||``.
+
+```blocks
+basic.forever(function (){
+    if(moveSMART.counting()) {
+        moveSMART.showSteps()
+    }
+    else {
+        basic.showNumber(rate)
+    }
+})

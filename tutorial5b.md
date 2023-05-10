@@ -46,26 +46,29 @@ To *compute* our step rate, we need to convert our timer's seconds into minutes 
 minute). Let's say we walked 10 steps in 5 seconds. Then we walked 10/5 = 2 steps per second. Since 
 there are 60 seconds in a minute, we could walk 2 x 60 = 120 steps per minute.
 
-So we take the number of steps our pedometer counts, divide it by the number of second our timer counts. 
-This gives us how many steps we walk per second. To get how many steps we walk per *minute*, we just 
+So we take the number of steps our pedometer counts, divide it by the number of seconds our timer 
+counts. This gives us how many steps we walk per second. To get how many steps we walk per *minute*, we just 
 multiply by 60.
 
 
 ## Step 4
   
-In programming, ``||Variables||`` help us keep track of data our program needs to run.
+In programming, ``||variables:Variables||`` help us keep track of data our program needs to run.
 
-In this program, we already have four ``||Variables||``. The ``||moveSMART:counting||`` and
-``||moveSMART:timing||`` variables are always either true or false -- they are true when our pedometer
-is active (after we press button A) and false when our pedometer is off (after we press button B).
+In this program, we already have four ``||variables:Variables||``. They are ``||moveSMART:counting||``, 
+``||moveSMART:timing||``, ``||moveSMART:steps||``, and ``||moveSMART:seconds||``.
+
+In our program, the ``||moveSMART:counting||`` and ``||moveSMART:timing||`` variables are 
+always either true or false -- they are true when our pedometer is active (after we press button A) and 
+false when our pedometer is off (after we press button B).
 
 The ``||moveSMART:steps||`` variable keeps track of the number of steps we walk between button presses
-and the ``||moveSMART:timer||`` variable keeps track of the number of seconds that pass between button
+and the ``||moveSMART:seconds||`` variable keeps track of the number of seconds that pass between button
 presses.
 
-You can see one of the variables in our program -- look at the ``||Input:on shake||`` block. The 
-purple oval says ``||moveSMART:counting||``. This is because, when the microbit is shaken, we first 
-check to see if our pedometer is active. Only if it is active, we increase the step count.
+You can see one of the variables in our program -- look at the ``||input:on shake||`` block. The 
+dark blue hexagon says ``||moveSMART:counting||``. This is because, when the microbit is shaken, we 
+first check to see if our pedometer is active. Only if it is active, we increase the step count.
 
 
 ## Step 5
@@ -73,11 +76,11 @@ check to see if our pedometer is active. Only if it is active, we increase the s
 Our next step is to compute our step rate. We will need to store the rate that we compute in another 
 variable, which we'll have to make ourselves. 
 
-Select the ``||Variables||`` tray and click "Make a variable". For the variable's name, type "rate" in 
-the box that appears. Press OK. 
+Select the ``||variables:Variables||`` tray and click "Make a variable". For the variable's name, type 
+"rate" in the box that appears. Press OK. 
 
 Now you'll see new red blocks have been created that allow you to do things with your new 
-``||Variables:rate||`` variable.
+``||variables:rate||`` variable.
 
 ## Step 6
 
@@ -86,8 +89,8 @@ to multiply by 60 to get the number of steps per minute.
 
 Let's do this math when you press button B.
 
-First, choose the ``||Variables:set rate||`` block from the ``||Variables||`` tray and place it in the 
-``||Input:on button B pressed||`` block after ``||moveSMART:stop timing||``.
+First, choose the ``||variables:set rate||`` block from the ``||variables:Variables||`` tray and place 
+it in the ``||input:on button B pressed||`` block after ``||moveSMART:stop timing||``.
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
@@ -117,18 +120,18 @@ input.onButtonPressed(Button.B, function () {
 ## Step 8
 Now we just need to fill in the variables for our calclation.
 
-In the ``||moveSMART||`` tray, select ``||moveSMART:steps||`` and place it in the first 0 for the divide 
-(the dividend).
+In the ``||moveSMART:moveSMART||`` tray, select ``||moveSMART:steps||`` and place it in the first 0 for 
+the divide (the dividend).
 
-Select ``||moveSMART:timer||`` and place it in the second 0 (the divisor).
+Select ``||moveSMART:seconds||`` and place it in the second 0 (the divisor).
 
-Finally, put a 60 in the final 0 (as the multiplier).
+Finally, type 60 in place of the final 0 (as the multiplier).
 
 ```blocks   
 input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()
     moveSMART.stopTiming()  
-    rate = moveSMART.steps() / moveSMART.timer() * 60 
+    rate = moveSMART.steps() / moveSMART.seconds() * 60 
 })
 ```
 
@@ -151,10 +154,10 @@ basic.forever(function (){
 
 ## Step 10
 
-Instead of the ``||Logic:true||`` value, we want to ``||moveSMART:show steps||`` whenever our pedometer 
+Instead of the ``||logic:true||`` value, we want to ``||moveSMART:show steps||`` whenever our pedometer 
 is ``||moveSMART:counting||``. 
 
-Replace ``||Logic:true||`` with ``||moveSMART:counting||`` from the ``||moveSMART||`` tray.
+Replace ``||logic:true||`` with ``||moveSMART:counting||`` from the ``||moveSMART||`` tray.
 
 ```blocks
 basic.forever(function (){
@@ -168,7 +171,7 @@ basic.forever(function (){
 
 Now we need to display ``||variables:rate||`` whenever we are *not* ``||moveSMART:counting||``. 
 
-Touch the + sign at the bottom of the ``||Logic:if||`` block. The word ``||Logic:else||`` appears.
+Touch the + sign at the bottom of the ``||logic:if||`` block. The word ``||logic:else||`` appears.
 
 Tell your microbit to ``||basic:show||`` the ``||variables:rate||`` whenever it is not 
 ``||moveSMART:counting||``.

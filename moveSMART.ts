@@ -115,7 +115,7 @@ namespace moveSMART {
     }
 
     //%block weight=230
-    export function timer(): number{
+    export function seconds(): number{
         return _timer
     }
      

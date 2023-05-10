@@ -35,6 +35,10 @@ To edit this repository in MakeCode.
 * Add any new tutorial files in the "files"
 * When pushing to github, make sure that the commit message, tag, and the version number in pxt.json are the same
 
+## Creating New Tutorial
+* [Tutorial Editor](https://dev.makecode.com/tutorial-tool)
+* [Makecode sandbox](https://makecode.microbit.org/?sandbox=1#editor)
+
 #### Metadata (used for search, rendering)
 
 * for PXT/microbit

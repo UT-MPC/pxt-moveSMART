@@ -76,7 +76,7 @@ namespace moveSMART {
     /**
      * TODO: show whether the step counter is counting
      */
-    //%block weight=500
+    //%block weight=200
     export function counting(): boolean {
         return isCounting
     }
@@ -109,10 +109,12 @@ namespace moveSMART {
         radio.sendValue(name, activeness)
     }
 
+    //%block weight=225
     export function steps(): number {
         return _steps
     }
 
+    //%block weight=230
     export function timer(): number{
         return _timer
     }

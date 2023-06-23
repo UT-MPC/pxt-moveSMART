@@ -1,6 +1,6 @@
 {
     "name": "moveSMARTbeta",
-    "version": "0.0.147",
+    "version": "0.0.148",
     "description": "",
     "license": "MIT",
     "dependencies": {
@@ -18,7 +18,7 @@
         "tutorial5.md",
         "tutorial5b.md",
         "tutorial6.md",
-	"tutorial7.md",
+        "tutorial7.md",
         "tutorial_test.md",
         "hotpotato.md",
         "hotpotato-easy.md",

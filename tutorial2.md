@@ -65,21 +65,13 @@ Click **Next** to to go to the next step.
 
 ## Step 7
 
-You can try deleting the ``||input:on shake||`` block. Why does the number stay at 0 now even when you "shake" the @boardname@? 
-
-Put the ``||input:on shake||`` block and the ``||moveSMART:increase step count||`` block back. Does the @boardname@ respond to your shakes now?
-
-Click **Next** to to go to the next step.
-
-## Step 8
-
 You just made a step counter! When the @boardname@ is close to your foot or ankle it will count the number of steps you take.
 
 But you can also use it to measure your physical activity in general, just by having it in your hand or pocket.
 
 Click **Next** to to go to the next step.
 
-## Step 9
+## Step 8
 
 Flash your code to your @boardname@ and see how it works!
 Press the ``|Download|`` on the bottom left of your screen.

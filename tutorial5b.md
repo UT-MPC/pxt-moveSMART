@@ -29,38 +29,30 @@ at what this program does.
 
 ## Step 2
 
-In the ``||Basic:forever||`` block, we make sure to show our step count all of the time. In the 
-``||Input:on Button A pressed||`` block, we tell our step counter to start counting steps and counting 
-time. In the ``||Input:on Button B pressed||`` block, we tell our step counter to stop counting steps 
-and stop counting time. And in the ``||Input:on shake||`` block, we add a step to our step count.
+In the ``||Basic:forever||`` block, we make sure to show our step count all of the time. 
 
-In this tutorial, we will add a new feature that calculates and displays your step rate.
+In ``||Input:on Button A pressed||``, we tell our microbit to start counting steps and start counting time. 
 
+In ``||Input:on Button B pressed||``, we tell our microbit to stop counting steps and stop counting time.
 
 ## Step 3
 
-Our step rate is the number of steps we take per minute. If we are walking, we usually take  more than 
-60 steps per minute. If we're running, we usually take more than 100 steps per minute.
+In ``||Input:on shake||``, we add a step to our step count, but only IF we are supposed to be counting steps.
 
-To *compute* our step rate, we need to convert our timer's seconds into minutes (or fractions of a 
-minute). Let's say we walked 10 steps in 5 seconds. Then we walked 10/5 = 2 steps per second. Since 
-there are 60 seconds in a minute, we could walk 2 x 60 = 120 steps per minute.
-
-So we take the number of steps our pedometer counts, divide it by the number of seconds our timer 
-counts. This gives us how many steps we walk per second. To get how many steps we walk per *minute*, we just 
-multiply by 60.
-
+Today, we will add a new feature that calculates and displays the step **rate**. The step rate is the number of steps per minute.
 
 ## Step 4
   
-In programming, ``||variables:Variables||`` help us keep track of data our program needs to run.
+In programming, ``||variables:Variables||`` help us keep track of **data** our program needs.
 
 In this program, we already have four ``||variables:Variables||``. They are ``||moveSMART:counting||``, 
 ``||moveSMART:timing||``, ``||moveSMART:steps||``, and ``||moveSMART:seconds||``.
 
 In our program, the ``||moveSMART:counting||`` and ``||moveSMART:timing||`` variables are 
-always either true or false -- they are true when our pedometer is active (after we press button A) and 
+always either **true** or **false** -- they are true when our pedometer is active (after we press button A) and 
 false when our pedometer is off (after we press button B).
+
+## Step 5
 
 The ``||moveSMART:steps||`` variable keeps track of the number of steps we walk between button presses
 and the ``||moveSMART:seconds||`` variable keeps track of the number of seconds that pass between button
@@ -68,10 +60,59 @@ presses.
 
 You can see one of the variables in our program -- look at the ``||input:on shake||`` block. The 
 dark blue hexagon says ``||moveSMART:counting||``. This is because, when the microbit is shaken, we 
-first check to see if our pedometer is active. Only if it is active, we increase the step count.
+first check to see if our pedometer is active. If it is active, we increase the step count.
 
 
-## Step 5
+## Step 6
+
+Today, we will add new variables to help **compute** our step rate.
+
+If we are walking, we usually take more than 60 steps per minute. If we're running, we usually take more than 100 steps per minute.
+
+To **compute** step rate, we need to change our timer's seconds into minutes. 
+
+There are 60 seconds in a minute. If our timer has counted 120 seconds, that is the same as 120/60 = 2 minutes.
+
+If our timer has counted 6 seconds, that is the same as 6/60 = 1/10 = 0.1 minutes.
+
+
+## Step 7
+
+Let's get programming! Create a new ``||variables:variable||``.
+
+Select the ``||variables:Variables||`` tray and click "Make a variable". For the variable's name, type "minutes" in the box that appears. Press OK. 
+
+Now you'll see new red blocks have been created that allow you to do things with your new ``||variables:minutes||`` variable.
+
+## Step 8
+
+When we stop the timer (by pushing button B), we need to turn the timer's seconds into minutes.
+
+
+## Step 9
+
+When we push button B in our program, the timer and step counter stop. Since our timer counted seconds, we want to calculate how many minutes the microbit was running.
+
+
+Let's say we walked 10 steps in 5 seconds. Then we walked 10/5 = 2 steps per second. Since 
+there are 60 seconds in a minute, we could walk 2 x 60 = 120 steps per minute.
+
+So we take the number of steps our pedometer counts, divide it by the number of seconds our timer 
+counts. This gives us how many steps we walk per second. To get how many steps we walk per *minute*, we just 
+multiply by 60.
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    moveSMART.stopCounting()
+    moveSMART.stopTiming()
+    minutes = timer / 60
+}) 
+```
+
+
+
+
+## Step 10
 
 Our next step is to compute our step rate. We will need to store the rate that we compute in another 
 variable, which we'll have to make ourselves. 
@@ -82,7 +123,7 @@ Select the ``||variables:Variables||`` tray and click "Make a variable". For the
 Now you'll see new red blocks have been created that allow you to do things with your new 
 ``||variables:rate||`` variable.
 
-## Step 6
+## Step 11
 
 To figure out the rate, we need to divide the number of steps by the number of seconds. Then we need 
 to multiply by 60 to get the number of steps per minute.
@@ -100,7 +141,7 @@ input.onButtonPressed(Button.B, function () {
 }) 
 ```
 
-## Step 7
+## Step 12
 
 In the ``||math: math||`` tray you will find blocks for subtraction and division.
 You can use them to set ``||variables: rate||``'s value. 
@@ -117,7 +158,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 8
+## Step 13
 Now we just need to fill in the variables for our calclation.
 
 In the ``||moveSMART:moveSMART||`` tray, select ``||moveSMART:steps||`` and place it in the first 0 for 
@@ -135,7 +176,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 9
+## Step 14
 
 While we are exercising, we want our pedometer to show our step count. It already does this. When we are 
 done exercising, we want our pedometer to show what our step rate was for our previous exercise. 
@@ -152,7 +193,7 @@ basic.forever(function (){
 })
 ```
 
-## Step 10
+## Step 15
 
 Instead of the ``||logic:true||`` value, we want to ``||moveSMART:show steps||`` whenever our pedometer 
 is ``||moveSMART:counting||``. 
@@ -167,7 +208,7 @@ basic.forever(function (){
 })
 ```
 
-## Step 11
+## Step 16
 
 Now we need to display ``||variables:rate||`` whenever we are *not* ``||moveSMART:counting||``. 
 

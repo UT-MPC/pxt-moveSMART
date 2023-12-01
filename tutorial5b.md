@@ -196,6 +196,7 @@ basic.forever(function (){
         basic.showNumber(rate)
     }
 })
+```
 
 ## Step 14
 

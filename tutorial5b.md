@@ -123,7 +123,7 @@ We need make the ``||variables:rate||`` variable have the step rate. This should
 
 First put a ``||math:/||`` block where the 0 is in ``||variables:set rate||``. 
 
-From ``||moveSMART||``, select ``||moveSMART:steps||`` and place it in the first 0 for the divide (the dividend).
+From ``||moveSMART||``, select ``||moveSMART:steps()||`` and place it in the first 0 for the divide (the dividend).
 
 From ``||variables||``, select ``||variables:minutes||`` and place it in the second 0 for the divide (the divisor).
 

@@ -97,11 +97,11 @@ At the bottom of the ``||Input:on Button B pressed||`` (after ``||moveSMART:stop
 
 ## Step 10
 
-Next, we need make the ``||variables:minutes||`` variable have the value ``||moveSMART:timer||`` divided by 60. You can do this using the blocks inside of ``||math||``.
+Next, we need make the ``||variables:minutes||`` variable have the value ``||moveSMART:timer||`` divided by 60. You can do this using the blocks inside of ``||math:math||``.
 
 First put a ``||math:/||`` block where the 0 is in ``||variables:set minutes||``. 
 
-From ``||moveSMART||``, select ``||moveSMART:seconds||`` and place it in the first 0 for the divide (the dividend).
+From ``||moveSMART:moveSMART||``, select ``||moveSMART:seconds||`` and place it in the first 0 for the divide (the dividend).
 
 Type 60 in the second 0 for the divide (the divisor).
 
@@ -129,9 +129,9 @@ The ``||variables:rate||`` variable should be ``||moveSMART:steps||`` divided by
 
 Put a ``||math:/||`` block where the 0 is in ``||variables:set rate||``. 
 
-From ``||moveSMART:||``, select ``||moveSMART:steps()||`` and place it in the first 0 for the divide (the dividend).
+From ``||moveSMART:moveSMART||``, select ``||moveSMART:steps||`` and place it in the first 0 for the divide (the dividend).
 
-From ``||variables||``, select ``||variables:minutes||`` and place it in the second 0 for the divide (the divisor).
+From ``||variables:Variables||``, select ``||variables:minutes||`` and place it in the second 0 for the divide (the divisor).
 
 
 ```blocks
@@ -152,6 +152,8 @@ When we are done exercising, we want our pedometer to show what our step rate wa
 
 We need to update our ``||basic:forever||`` block. 
 
+## Step 14
+
 First, we need a ``||Logic:if||`` block from the ``||Logic||`` tray. We want to put it inside the ``||basic:forever||`` block so that the 
 ``||moveSMART:show steps||`` is inside of the if.
 
@@ -163,7 +165,7 @@ basic.forever(function (){
 })
 ```
 
-## Step 14
+## Step 15
 
 Instead of the ``||logic:true||`` value, we want to ``||moveSMART:show steps||`` whenever our pedometer 
 is ``||moveSMART:counting||``. 
@@ -178,7 +180,7 @@ basic.forever(function (){
 })
 ```
 
-## Step 13
+## Step 16
 
 Now we need to display ``||variables:rate||`` whenever we are *not* ``||moveSMART:counting||``. 
 
@@ -198,6 +200,6 @@ basic.forever(function (){
 })
 ```
 
-## Step 14
+## Step 17
 
 That's it! We're done. You can download your program to your microbit now.

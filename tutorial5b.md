@@ -113,7 +113,7 @@ Next we need to compute the our step **rate**. That's the number of steps we wal
 
 First, let's create a new ``||variables:Variable||`` called ``||variables:rate||``.
 
-Select the ``||variables:Variables||`` tray and click "Make a variable". For the variable's name, type "minutes" in the box that appears. Press OK. 
+Select the ``||variables:Variables||`` tray and click "Make a variable". For the variable's name, type "rate" in the box that appears. Press OK. 
 
 ## Step 10
 

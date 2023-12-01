@@ -133,7 +133,7 @@ input.onButtonPressed(Button.B, function () {
     moveSMART.stopCounting()
     moveSMART.stopTiming()
     minutes = moveSMART.seconds()/60
-    rate = moveSMART.steps/minutes
+    rate = moveSMART.steps()/minutes
 }) 
 ```
 

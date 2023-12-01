@@ -18,7 +18,7 @@ input.onGesture(Gesture.Shake, function () {
 ```
 
 # ProjectSMART Pedometer Tutorial -- Counting and Timing
-# Learning about Rate
+# Learning about Rate and Variables
 
 ## Step 1
 

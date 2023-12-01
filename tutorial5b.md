@@ -87,12 +87,22 @@ Now you'll see new red blocks have been created that allow you to do things with
 
 ## Step 8
 
-When we stop the timer (by pushing button B), we need to turn the timer's seconds into minutes.
+When we push button B in our program, the timer and step counter stop. Since our timer counted seconds, we want to calculate how many minutes the microbit was active.
 
+At the bottom of the ``||Input:on Button B pressed||`` (after ``||moveSMART:stop timing||``), add a ``||variables:set minutes||`` block.
+
+We need make the ``||variables:minutes||`` variable have the value ``||moveSMART:timer||`` divided by 60. You can do this using the blocks inside of ``||math||``.
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    moveSMART.stopCounting()
+    moveSMART.stopTiming()
+    minutes = moveSMART.seconds()/60
+}) 
+```
 
 ## Step 9
 
-When we push button B in our program, the timer and step counter stop. Since our timer counted seconds, we want to calculate how many minutes the microbit was running.
 
 
 Let's say we walked 10 steps in 5 seconds. Then we walked 10/5 = 2 steps per second. Since 

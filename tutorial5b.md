@@ -22,7 +22,7 @@ input.onGesture(Gesture.Shake, function () {
 
 ## Step 1
 
-dOn your screen you see a simple physical activity sensor that can be 
+On your screen you see a simple physical activity sensor that can be 
 controlled with a button. This 
 combines what we learned with our timer and what we learned with our step count. Let's take a quick look 
 at what this program does.
